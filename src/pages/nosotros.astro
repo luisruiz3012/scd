@@ -1,0 +1,416 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title="SCD | NOSOTROS" activePage="nosotros">
+
+  <section class="page-heading">
+    <div class="container">
+      <h1>sistemas de computación y captura de datos, s. a.</h1>
+    </div>
+  </section>
+
+  <section class="intro-section">
+    <div class="container intro-grid">
+      <div class="intro-image">
+        <img src="/images/0-about-1-870x400-crop-u73083.jpg" alt="SCD" />
+      </div>
+      <div class="intro-content">
+        <h2>TENEMOS PRESENCIA EN TODO EL TERRITORIO NACIONAL Y CENTROAMERICANO</h2>
+        <p>Somos una empresa que ofrece servicios de tecnología equipo de primera calidad y el mejor equipo calificado.</p>
+        <p>Nuestro principal objetivo es el servicio al cliente y ofrecer la mejor tecnología</p>
+        <a href="/contacto" class="btn">CONTACTO</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="tech-section dark-bg">
+    <div class="container">
+      <h2 class="section-title">TECNOLOGIAS DE ESCANEO</h2>
+      <div class="tech-grid">
+        <div class="tech-card">
+          <div class="tech-label">OMR</div>
+          <div class="tech-name">OMR</div>
+          <p class="tech-desc"><strong>Optical Mark Recognition - Reconocimiento Marcas</strong> Ópticas: Reconoce la marca sobre burbujas, círculo, óvalos o cuadros hechas a mano con lápiz o tinta 99.9% de seguridad.</p>
+        </div>
+        <div class="tech-card">
+          <div class="tech-label">OCR</div>
+          <div class="tech-name">OCR</div>
+          <p class="tech-desc"><strong>Optical Character Recognition - Reconocimiento de Caracteres Ópticos:</strong> Reconoce información impresa por medio de una impresora que puede ser matricial, inkjet, láser y también máquina de escribir.</p>
+        </div>
+        <div class="tech-card">
+          <div class="tech-label">ICR</div>
+          <div class="tech-name">ICR</div>
+          <p class="tech-desc"><strong>Intelligent Character Recognition - Reconocimiento de Caracteres inteligentes:</strong> Reconoce las marcas OMR, también OCR y escritura hecha a mano con lápiz o tinta</p>
+        </div>
+        <div class="tech-card">
+          <div class="tech-label">BARCODE</div>
+          <div class="tech-name">BARCODE</div>
+          <p class="tech-desc"><strong>Optical Barcode Recognition - Reconocimiento Óptico de Código de Barra:</strong> reconoce código de barras QR, Code 3 of 9</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="banner-section dark-bg">
+    <div class="container banner-content">
+      <p>te asesoramos en la implementación de sistemas de cámaras y controles de acceso estamos certificados por las marcas que representamos, experiencia comprobada de 20 años</p>
+      <a href="/contacto" class="btn">CONTACTO</a>
+    </div>
+  </section>
+
+  <section class="security-section">
+    <div class="container">
+      <h2 class="section-title">seguridad y control acceso</h2>
+      <div class="security-grid">
+        <div class="security-card">
+          <img src="/images/about-us-02.jpg" alt="Cámaras HD" />
+          <p class="security-desc">Cámaras HD 720 - 1080 HI-LOOK DVRS Y NVRS</p>
+          <span class="security-brand">hikvision</span>
+        </div>
+        <div class="security-card">
+          <img src="/images/about-us-03.jpg" alt="Controles de acceso" />
+          <p class="security-desc">Controles de acceso Huella, Facial, Iris, Tarjeta y Pin</p>
+          <span class="security-brand">anviz</span>
+        </div>
+        <div class="security-card">
+          <img src="/images/about-us-04.jpg" alt="Crosschex" />
+          <p class="security-desc">Versión Gratuita tanto de modo local como cloud para reportes de control de accesos ANVIZ</p>
+          <span class="security-brand">crosschex</span>
+        </div>
+        <div class="security-card">
+          <img src="/images/about-us-05.jpg" alt="Controles de acceso" />
+          <p class="security-desc">Controles de acceso, barras, detectores de metales</p>
+          <span class="security-brand">zkteco</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="software-section dark-bg">
+    <div class="container">
+      <h2 class="section-title">SOFTWARE</h2>
+      <div class="software-grid">
+        <div class="software-row">
+          <div class="software-image">
+            <img src="/images/about-us-06.jpg" alt="Remark Classic OMR" />
+          </div>
+          <div class="software-info">
+            <p>Lectura y reportes excepcionales para scanners OMR de Scantron.</p>
+            <span class="software-name">REMARK CLASSIC OMR</span>
+          </div>
+        </div>
+        <div class="software-row">
+          <div class="software-image">
+            <img src="/images/about-us-07.jpg" alt="Remark Office OMR" />
+          </div>
+          <div class="software-info">
+            <p>Lectura y reportes excepcionales para scanners de imagenes Twain</p>
+            <span class="software-name">REMARK OFFICE OMR</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .page-heading {
+    background-color: #323946;
+    padding: 30px 0;
+    text-align: center;
+  }
+
+  .page-heading h1 {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  .intro-section {
+    padding: 50px 0;
+  }
+
+  .intro-grid {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+  }
+
+  .intro-image {
+    flex: 0 0 470px;
+  }
+
+  .intro-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .intro-content h2 {
+    color: #323946;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    line-height: 1.4;
+  }
+
+  .intro-content p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 15px;
+  }
+
+  .btn {
+    display: inline-block;
+    background-color: #24A3D8;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 12px 30px;
+    border-radius: 4px;
+    transition: 0.6s;
+  }
+
+  .btn:hover {
+    background-color: #EFBD1A;
+    color: #fff;
+  }
+
+  .dark-bg {
+    background-color: #323946;
+  }
+
+  .section-title {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 2px;
+    padding: 40px 0 30px;
+  }
+
+  .tech-section {
+    padding-bottom: 50px;
+  }
+
+  .tech-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  .tech-card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .tech-label {
+    background-color: #24A3D8;
+    color: #fff;
+    font-weight: 700;
+    font-size: 16px;
+    text-transform: uppercase;
+    padding: 8px 20px;
+    border-radius: 4px;
+    align-self: flex-start;
+  }
+
+  .tech-name {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .tech-desc {
+    color: #ccc;
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .tech-desc strong {
+    color: #fff;
+  }
+
+  .banner-section {
+    padding: 50px 0;
+  }
+
+  .banner-content {
+    text-align: center;
+  }
+
+  .banner-content p {
+    color: #fff;
+    font-size: 16px;
+    line-height: 1.6;
+    max-width: 900px;
+    margin: 0 auto 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .security-section {
+    padding: 50px 0;
+  }
+
+  .security-section .section-title {
+    color: #323946;
+  }
+
+  .security-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  .security-card {
+    text-align: center;
+  }
+
+  .security-card img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+  }
+
+  .security-desc {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
+
+  .security-brand {
+    display: block;
+    color: #00BFFF;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .software-section {
+    padding-bottom: 60px;
+  }
+
+  .software-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .software-row {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+  }
+
+  .software-image {
+    flex: 0 0 270px;
+  }
+
+  .software-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .software-info p {
+    color: #ccc;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+  }
+
+  .software-name {
+    display: block;
+    color: #00BFFF;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  @media (max-width: 992px) {
+    .intro-grid {
+      flex-direction: column;
+    }
+
+    .intro-image {
+      flex: 0 0 auto;
+      width: 100%;
+    }
+
+    .security-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .software-row {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .software-image {
+      flex: 0 0 auto;
+      width: 270px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .page-heading h1 {
+      font-size: 18px;
+    }
+
+    .section-title {
+      font-size: 20px;
+    }
+
+    .tech-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .security-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .intro-content h2 {
+      font-size: 16px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .page-heading h1 {
+      font-size: 15px;
+      letter-spacing: 1px;
+    }
+
+    .section-title {
+      font-size: 17px;
+    }
+
+    .banner-content p {
+      font-size: 13px;
+    }
+
+    .software-image {
+      width: 100%;
+    }
+  }
+</style>

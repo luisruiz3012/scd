@@ -1,0 +1,256 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title="SCD | SOLUCIONES" activePage="soluciones">
+
+  <section class="hero-soluciones">
+    <div class="container">
+      <h1>SOLUCIONES</h1>
+      <p>Tecnología e innovación para impulsar tu empresa</p>
+    </div>
+  </section>
+
+  <section class="soluciones-grid">
+    <div class="container">
+      <div class="solucion-card">
+        <div class="solucion-icon">
+          <i class="fas fa-sync-alt"></i>
+        </div>
+        <div class="solucion-text">
+          <h3>Transformación Digital</h3>
+          <p>Implementamos herramientas digitales que optimizan procesos, reducen costos y mejoran la eficiencia operativa. Te acompañamos en cada paso hacia la digitalización de tu empresa con soluciones a la medida.</p>
+        </div>
+      </div>
+
+      <div class="solucion-card">
+        <div class="solucion-icon">
+          <i class="fas fa-scanner"></i>
+        </div>
+        <div class="solucion-text">
+          <h3>Digitalización y Captura de Documentos</h3>
+          <p>Venta y arrendamiento de scanners de producción para digitalización de alto volumen. Procesamiento de formularios OMR, OCR, ICR y código de barras. Servicio de digitalización outsourcing y captura masiva de documentos.</p>
+        </div>
+      </div>
+
+      <div class="solucion-card">
+        <div class="solucion-icon">
+          <i class="fas fa-file-alt"></i>
+        </div>
+        <div class="solucion-text">
+          <h3>Diseño e Impresión de Formularios</h3>
+          <p>Diseño de formularios OMR, OCR, ICR y manejo de información variable. Impresión de formularios perforados, numerados y con código de barras. Creación y personalización de formularios de acuerdo a los requerimientos del cliente.</p>
+        </div>
+      </div>
+
+      <div class="solucion-card">
+        <div class="solucion-icon">
+          <i class="fas fa-chart-bar"></i>
+        </div>
+        <div class="solucion-text">
+          <h3>Remark Office OMR</h3>
+          <p>Software líder para procesamiento de formularios. Ideal para evaluaciones educativas, admisiones, encuestas, censos y proyectos gubernamentales. Calificación inmediata, reportes personalizados y exportación a Moodle, Blackboard y Excel.</p>
+        </div>
+      </div>
+
+      <div class="solucion-card">
+        <div class="solucion-icon">
+          <i class="fas fa-video"></i>
+        </div>
+        <div class="solucion-text">
+          <h3>Sistemas de Seguridad</h3>
+          <p>Asesoramiento e instalación de cámaras de seguridad IP/NVR. Diseño y diagrama de proyectos de seguridad certificados. Implementación de controles de acceso con tecnologías local, red y nube para control de asistencia.</p>
+        </div>
+      </div>
+
+      <div class="solucion-card">
+        <div class="solucion-icon">
+          <i class="fas fa-laptop"></i>
+        </div>
+        <div class="solucion-text">
+          <h3>Soporte Técnico y Mantenimiento</h3>
+          <p>Servicio técnico especializado en equipos de cómputo, scanners y sistemas informáticos. Mantenimiento preventivo y correctivo. Soporte para integración de aplicaciones y migración de datos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <h2>¿Necesitas una solución a la medida?</h2>
+      <p>Contáctanos para recibir un diagnóstico inicial gratuito</p>
+      <a href="/contacto" class="btn-contacto">CONTACTO</a>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .hero-soluciones {
+    background: #323946;
+    padding: 60px 0;
+    text-align: center;
+  }
+
+  .hero-soluciones h1 {
+    color: #fff;
+    font-size: 36px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .hero-soluciones p {
+    color: #f4f4f4;
+    font-size: 18px;
+  }
+
+  .soluciones-grid {
+    padding: 60px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .solucion-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 25px;
+    padding: 30px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    transition: 0.3s;
+  }
+
+  .solucion-card:nth-child(even) {
+    background: #fff;
+    border: 1px solid #eee;
+  }
+
+  .solucion-card:hover {
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    transform: translateY(-2px);
+  }
+
+  .solucion-icon {
+    flex-shrink: 0;
+    width: 60px;
+    height: 60px;
+    background: #24A3D8;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: #fff;
+  }
+
+  .solucion-text h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #323946;
+    margin-bottom: 8px;
+  }
+
+  .solucion-text p {
+    font-size: 15px;
+    color: #666;
+    line-height: 1.7;
+  }
+
+  .cta-section {
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('/images/home-slide-1.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 60px 0;
+    text-align: center;
+  }
+
+  .cta-section h2 {
+    font-size: 28px;
+    color: #fff;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+
+  .cta-section p {
+    font-size: 16px;
+    color: #f4f4f4;
+    margin-bottom: 25px;
+  }
+
+  .btn-contacto {
+    display: inline-block;
+    background: #24A3D8;
+    color: #fff;
+    padding: 12px 30px;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    transition: 0.3s;
+  }
+
+  .btn-contacto:hover {
+    background: #EFBD1A;
+    color: #fff;
+  }
+
+  @media (max-width: 768px) {
+    .hero-soluciones {
+      padding: 40px 0;
+    }
+
+    .hero-soluciones h1 {
+      font-size: 26px;
+    }
+
+    .hero-soluciones p {
+      font-size: 15px;
+    }
+
+    .soluciones-grid {
+      padding: 40px 0;
+      gap: 20px;
+    }
+
+    .solucion-card {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .solucion-text h3 {
+      font-size: 18px;
+    }
+
+    .solucion-text p {
+      font-size: 14px;
+    }
+
+    .cta-section h2 {
+      font-size: 22px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero-soluciones h1 {
+      font-size: 22px;
+    }
+
+    .solucion-icon {
+      width: 50px;
+      height: 50px;
+      font-size: 20px;
+    }
+  }
+</style>
