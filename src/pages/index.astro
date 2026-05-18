@@ -136,11 +136,17 @@ import Layout from '../layouts/Layout.astro';
         <div class="logo-category">
           <h3 class="category-title">UNIVERSIDADES</h3>
           <div class="logo-row">
-            <img src="/images/usac_logo.png" alt="Cliente" />
-            <img src="/images/mariano.jpg" alt="Cliente" />
-            <img src="/images/galilero u.png" alt="Cliente" />
-            <img src="/images/del valle.png" alt="Cliente" />
-            <img src="/images/landivar.jpg" alt="Cliente" />
+            <img src="/images/usac_logo.png" alt="USAC Guatemala" />
+            <img src="/images/unah.png" alt="UNAH Honduras" />
+            <img src="/images/ues.png" alt="Universidad de El Salvador" />
+            <img src="/images/uca.jpg" alt="UCA El Salvador" />
+            <img src="/images/unan.png" alt="UNAN Nicaragua" />
+          </div>
+          <div class="logo-row">
+            <img src="/images/mariano.jpg" alt="Mariano Gálvez" />
+            <img src="/images/galilero u.png" alt="Galileo" />
+            <img src="/images/del valle.png" alt="Del Valle" />
+            <img src="/images/landivar.jpg" alt="Landívar" />
           </div>
         </div>
       </div>
@@ -153,6 +159,38 @@ import Layout from '../layouts/Layout.astro';
       <p class="direccion">central. 4TA. Calle B 11-19 Residenciales santa mónica 'A', zona 2 de Mixco.</p>
       <div class="map-wrapper">
         <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3864.78!2d-90.5795!3d14.6305!3m2!1i1024!2i768!4f15!3m3!1m2!1s0x0%3A0x0!2s4ta+Calle+B+11-19+Residenciales+Santa+Monica+A+Zona+2+Mixco+Guatemala!5e0!3m2!1sen!2s!4v1" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-videos section-light">
+    <div class="container">
+      <h2 class="section-title">VIDEOS</h2>
+      <div class="videos-grid">
+        <div class="video-card">
+          <h3>Universidades</h3>
+          <video controls preload="metadata">
+            <source src="/videos/Universidades.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="video-card">
+          <h3>Colegios</h3>
+          <video controls preload="metadata">
+            <source src="/videos/Colegios.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="video-card">
+          <h3>Capacitaciones</h3>
+          <video controls preload="metadata">
+            <source src="/videos/Capacitaciones.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="video-card">
+          <h3>Academias</h3>
+          <video controls preload="metadata">
+            <source src="/videos/Academias.mp4" type="video/mp4" />
+          </video>
+        </div>
       </div>
     </div>
   </section>
@@ -585,8 +623,46 @@ import Layout from '../layouts/Layout.astro';
     color: #fff;
   }
 
+  .section-videos {
+    background: #fff;
+  }
+
+  .videos-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .video-card {
+    background: #f9f9f9;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  }
+
+  .video-card h3 {
+    color: #323946;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 15px 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 1px solid #eee;
+  }
+
+  .video-card video {
+    width: 100%;
+    display: block;
+  }
+
   /* Responsive */
   @media (max-width: 768px) {
+    .videos-grid {
+      grid-template-columns: 1fr;
+    }
+
     .hero-slider {
       height: 350px;
     }

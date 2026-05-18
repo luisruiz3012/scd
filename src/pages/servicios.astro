@@ -170,6 +170,38 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
+  <section class="videos-section">
+    <div class="container">
+      <h2>VIDEOS</h2>
+      <div class="videos-grid">
+        <div class="video-card">
+          <h3>Universidades</h3>
+          <video controls preload="metadata">
+            <source src="/videos/Universidades.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="video-card">
+          <h3>Colegios</h3>
+          <video controls preload="metadata">
+            <source src="/videos/Colegios.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="video-card">
+          <h3>Capacitaciones</h3>
+          <video controls preload="metadata">
+            <source src="/videos/Capacitaciones.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="video-card">
+          <h3>Academias</h3>
+          <video controls preload="metadata">
+            <source src="/videos/Academias.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </Layout>
 
 <style is:global>
@@ -446,6 +478,54 @@ import Layout from '../layouts/Layout.astro';
   .reportes-col ul li strong {
     color: #323946;
     font-size: 15px;
+  }
+
+  .videos-section {
+    padding: 50px 0;
+    background: #f4f4f4;
+  }
+
+  .videos-section h2 {
+    color: #323946;
+    font-size: 28px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+  }
+
+  .videos-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+
+  .video-card {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  }
+
+  .video-card h3 {
+    color: #323946;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 15px 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 1px solid #eee;
+  }
+
+  .video-card video {
+    width: 100%;
+    display: block;
+  }
+
+  @media (max-width: 768px) {
+    .videos-grid {
+      grid-template-columns: 1fr;
+    }
   }
 
   @media (max-width: 768px) {
