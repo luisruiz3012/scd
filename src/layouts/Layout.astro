@@ -7,16 +7,25 @@ export interface Props {
 const { title = "SCD", activePage = "" } = Astro.props as Props;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <link rel="icon" type="image/png" href="/favicon.png" />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/icofont@1.0.1/css/icofont.min.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/lykmapipo/icofont@1.0.1/css/icofont.min.css"
+    />
   </head>
   <body>
     <header class="site-header">
@@ -30,13 +39,41 @@ const { title = "SCD", activePage = "" } = Astro.props as Props;
           <span></span>
         </button>
         <nav class="nav-menu">
-          <a href="/" class="nav-link {activePage === 'inicio' ? 'active' : ''}">INICIO</a>
-          <a href="/nosotros" class="nav-link {activePage === 'nosotros' ? 'active' : ''}">NOSOTROS</a>
-          <a href="/soluciones" class="nav-link {activePage === 'soluciones' ? 'active' : ''}">SOLUCIONES</a>
-          <a href="/servicios" class="nav-link {activePage === 'servicios' ? 'active' : ''}">SERVICIOS</a>
-          <a href="/contacto" class="nav-link {activePage === 'contacto' ? 'active' : ''}">CONTACTO</a>
+          <a href="/" class="nav-link {activePage === 'inicio' ? 'active' : ''}"
+            >INICIO</a
+          >
+          <a
+            href="/nosotros"
+            class="nav-link {activePage === 'nosotros' ? 'active' : ''}"
+            >NOSOTROS</a
+          >
+          <a
+            href="/soluciones"
+            class="nav-link {activePage === 'soluciones' ? 'active' : ''}"
+            >SOLUCIONES</a
+          >
+          <a
+            href="/servicios"
+            class="nav-link {activePage === 'servicios' ? 'active' : ''}"
+            >SERVICIOS</a
+          >
+          <a
+            href="/videos"
+            class="nav-link {activePage === 'videos' ? 'active' : ''}"
+            >VIDEOS</a
+          >
+          <a
+            href="/contacto"
+            class="nav-link {activePage === 'contacto' ? 'active' : ''}"
+            >CONTACTO</a
+          >
         </nav>
-        <a href="https://wa.me/50222506216" target="_blank" rel="noopener" class="whatsapp-btn">
+        <a
+          href="https://wa.me/50222506216"
+          target="_blank"
+          rel="noopener"
+          class="whatsapp-btn"
+        >
           <i class="fab fa-whatsapp"></i> WhatsApp
         </a>
       </div>
@@ -51,7 +88,7 @@ const { title = "SCD", activePage = "" } = Astro.props as Props;
         <div class="footer-info">
           <div class="footer-item">
             <i class="icofont-location-pin"></i>
-            <span>4ta. Calle "B" 11-19 Residenciales santa mónica "A", zona 2 de Mixco.</span>
+            <span>4ta. Calle “B” 11-19 A Residenciales Santa Mónica, Zona 2 de Mixco</span>
           </div>
           <div class="footer-item">
             <i class="icofont-envelope"></i>
@@ -59,13 +96,39 @@ const { title = "SCD", activePage = "" } = Astro.props as Props;
           </div>
         </div>
         <div class="footer-social">
-          <a href="https://www.facebook.com/SCD.GT" target="_blank" rel="noopener" class="social-btn"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="social-btn"><i class="fab fa-instagram"></i></a>
-          <a href="https://twitter.com/" target="_blank" rel="noopener" class="social-btn"><i class="fab fa-twitter"></i></a>
-          <a href="https://plus.google.com/discover" target="_blank" rel="noopener" class="social-btn"><i class="fab fa-google-plus-g"></i></a>
+          <a
+            href="https://www.facebook.com/SCD.GT"
+            target="_blank"
+            rel="noopener"
+            class="social-btn"><i class="fab fa-facebook-f"></i></a
+          >
+          <a
+            href="https://www.instagram.com/"
+            target="_blank"
+            rel="noopener"
+            class="social-btn"><i class="fab fa-instagram"></i></a
+          >
+          <a
+            href="https://twitter.com/"
+            target="_blank"
+            rel="noopener"
+            class="social-btn"><i class="fab fa-twitter"></i></a
+          >
+          <a
+            href="https://plus.google.com/discover"
+            target="_blank"
+            rel="noopener"
+            class="social-btn"><i class="fab fa-google-plus-g"></i></a
+          >
         </div>
         <div class="footer-copyright">
-          <p>&copy; SCD Todos los derechos reservados | Diseño web por <a href="http://paginaswebparatodos.com/" target="_blank" rel="noopener">paginaswebparatodos.com</a></p>
+          <p>
+            &copy; SCD Todos los derechos reservados | Diseño web por <a
+              href="http://paginaswebparatodos.com/"
+              target="_blank"
+              rel="noopener">paginaswebparatodos.com</a
+            >
+          </p>
         </div>
       </div>
     </footer>
@@ -80,7 +143,8 @@ const { title = "SCD", activePage = "" } = Astro.props as Props;
     box-sizing: border-box;
   }
 
-  html, body {
+  html,
+  body {
     overflow-x: hidden;
   }
 
@@ -92,15 +156,25 @@ const { title = "SCD", activePage = "" } = Astro.props as Props;
   }
 
   a {
-    color: #00BFFF;
+    color: #00bfff;
     text-decoration: none;
   }
 
   a:hover {
-    color: #EFBD1A;
+    color: #efbd1a;
   }
 
-  a, p, h1, h2, h3, h4, h5, h6, .Button, img, .submit-btn {
+  a,
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .Button,
+  img,
+  .submit-btn {
     transition: 0.6s;
   }
 
@@ -143,7 +217,7 @@ const { title = "SCD", activePage = "" } = Astro.props as Props;
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background-color: #25D366;
+    background-color: #25d366;
     color: #fff;
     font-size: 14px;
     font-weight: 700;
@@ -154,7 +228,7 @@ const { title = "SCD", activePage = "" } = Astro.props as Props;
   }
 
   .whatsapp-btn:hover {
-    background-color: #128C7E;
+    background-color: #128c7e;
     color: #fff;
   }
 
@@ -192,12 +266,12 @@ const { title = "SCD", activePage = "" } = Astro.props as Props;
   }
 
   .nav-link:hover {
-    color: #EFBD1A;
+    color: #efbd1a;
   }
 
   .nav-link.active {
-    color: #EFBD1A;
-    border-bottom: 2px solid #00BFFF;
+    color: #efbd1a;
+    border-bottom: 2px solid #00bfff;
   }
 
   main {
@@ -237,7 +311,7 @@ const { title = "SCD", activePage = "" } = Astro.props as Props;
   }
 
   .footer-item i {
-    color: #EFBD1A;
+    color: #efbd1a;
     font-size: 16px;
   }
 
@@ -257,13 +331,13 @@ const { title = "SCD", activePage = "" } = Astro.props as Props;
     width: 36px;
     height: 36px;
     border: 1px solid #fff;
-    color: #00BFFF;
+    color: #00bfff;
     font-size: 15px;
     transition: 0.5s;
   }
 
   .social-btn:hover {
-    background-color: #EFBD1A;
+    background-color: #efbd1a;
     border-color: transparent;
     color: #fff;
   }
@@ -279,7 +353,7 @@ const { title = "SCD", activePage = "" } = Astro.props as Props;
   }
 
   .footer-copyright a:hover {
-    color: #DBDBDB;
+    color: #dbdbdb;
   }
 
   @media (max-width: 768px) {
@@ -313,7 +387,7 @@ const { title = "SCD", activePage = "" } = Astro.props as Props;
 
     .nav-link {
       padding: 12px 15px;
-      border-top: 1px solid rgba(255,255,255,0.1);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .logo-link img {
@@ -355,13 +429,13 @@ const { title = "SCD", activePage = "" } = Astro.props as Props;
 </style>
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener("DOMContentLoaded", () => {
     const toggle = document.querySelector('[data-toggle="nav"]');
-    const nav = document.querySelector('.nav-menu');
+    const nav = document.querySelector(".nav-menu");
     if (toggle && nav) {
-      toggle.addEventListener('click', () => {
-        toggle.classList.toggle('active');
-        nav.classList.toggle('open');
+      toggle.addEventListener("click", () => {
+        toggle.classList.toggle("active");
+        nav.classList.toggle("open");
       });
     }
   });

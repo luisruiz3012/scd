@@ -86,32 +86,6 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
-  <section class="software-section dark-bg">
-    <div class="container">
-      <h2 class="section-title">SOFTWARE</h2>
-      <div class="software-grid">
-        <div class="software-row">
-          <div class="software-image">
-            <img src="/images/about-us-06.jpg" alt="Remark Classic OMR" />
-          </div>
-          <div class="software-info">
-            <p>Lectura y reportes excepcionales para scanners OMR de Scantron.</p>
-            <span class="software-name">REMARK CLASSIC OMR</span>
-          </div>
-        </div>
-        <div class="software-row">
-          <div class="software-image">
-            <img src="/images/about-us-07.jpg" alt="Remark Office OMR" />
-          </div>
-          <div class="software-info">
-            <p>Lectura y reportes excepcionales para scanners de imagenes Twain</p>
-            <span class="software-name">REMARK OFFICE OMR</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
 </Layout>
 
 <style>
@@ -306,73 +280,6 @@ import Layout from '../layouts/Layout.astro';
     letter-spacing: 1px;
   }
 
-  .software-section {
-    padding-bottom: 60px;
-  }
-
-  .software-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-  }
-
-  .software-row {
-    display: flex;
-    gap: 30px;
-    align-items: center;
-  }
-
-  .software-image {
-    flex: 0 0 270px;
-  }
-
-  .software-image img {
-    display: block;
-    width: 100%;
-    height: auto;
-  }
-
-  .software-info p {
-    color: #ccc;
-    font-size: 14px;
-    line-height: 1.6;
-    margin-bottom: 10px;
-  }
-
-  .software-name {
-    display: block;
-    color: #00BFFF;
-    font-size: 18px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
-
-  @media (max-width: 992px) {
-    .intro-grid {
-      flex-direction: column;
-    }
-
-    .intro-image {
-      flex: 0 0 auto;
-      width: 100%;
-    }
-
-    .security-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    .software-row {
-      flex-direction: column;
-      text-align: center;
-    }
-
-    .software-image {
-      flex: 0 0 auto;
-      width: 270px;
-    }
-  }
-
   @media (max-width: 768px) {
     .page-heading h1 {
       font-size: 18px;
@@ -407,10 +314,6 @@ import Layout from '../layouts/Layout.astro';
 
     .banner-content p {
       font-size: 13px;
-    }
-
-    .software-image {
-      width: 100%;
     }
   }
 </style>

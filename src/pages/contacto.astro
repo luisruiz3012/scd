@@ -14,6 +14,21 @@ import Layout from '../layouts/Layout.astro';
     ></iframe>
   </section>
 
+  <section class="direcciones-section">
+    <div class="container">
+      <h2 class="section-title">UBICACIÓN</h2>
+      <div class="direcciones">
+        <p class="direccion">
+          <strong>CENTRAL:</strong> 4ta. Calle "B" 11-19 A Residenciales Santa Mónica, Zona 2 de Mixco
+        </p>
+        <p class="direccion">
+          <strong>SEDE:</strong> Edificio CRECE Torre 1 Condado Naranjo, Zona 4 de Mixco
+          <span class="nota-referencia">&ldquo;esta solo la ponemos de referencia porque recibimos correspondencia allí todavía&rdquo;</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
   <section class="contact-section">
     <h2 class="contact-heading">contacto</h2>
     <form class="contact-form" action="#" method="POST">
@@ -130,5 +145,58 @@ import Layout from '../layouts/Layout.astro';
 
   .submit-btn:hover {
     background-color: #00BFFF;
+  }
+
+  .direcciones-section {
+    padding: 50px 0;
+    background: #f4f4f4;
+  }
+
+  .direcciones-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .direcciones-section .section-title {
+    font-size: 28px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+    color: #323946;
+    text-align: center;
+  }
+
+  .direcciones {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+
+  .direccion {
+    font-size: 16px;
+    color: #323946;
+    margin: 0;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  .nota-referencia {
+    font-size: 13px;
+    color: #777;
+    font-style: italic;
+    display: block;
+    margin-top: 4px;
+  }
+
+  @media (max-width: 480px) {
+    .direcciones-section .section-title {
+      font-size: 22px;
+    }
+    .direccion {
+      font-size: 14px;
+    }
   }
 </style>
