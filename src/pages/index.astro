@@ -184,23 +184,23 @@ import Layout from "../layouts/Layout.astro";
     <div class="container">
       <h2 class="section-title">TECNOLOGIAS DE ESCANEO</h2>
       <div class="tech-grid">
-        <div class="tech-card">
-          <div class="tech-label">OMR</div>
+        <div class="tech-label">OMR</div>
+        <div class="tech-info">
           <div class="tech-name">OMR</div>
           <p class="tech-desc"><strong>Optical Mark Recognition - Reconocimiento Marcas</strong> Ópticas: Reconoce la marca sobre burbujas, círculo, óvalos o cuadros hechas a mano con lápiz o tinta 99.9% de seguridad.</p>
         </div>
-        <div class="tech-card">
-          <div class="tech-label">OCR</div>
+        <div class="tech-label">OCR</div>
+        <div class="tech-info">
           <div class="tech-name">OCR</div>
           <p class="tech-desc"><strong>Optical Character Recognition - Reconocimiento de Caracteres Ópticos:</strong> Reconoce información impresa por medio de una impresora que puede ser matricial, inkjet, láser y también máquina de escribir.</p>
         </div>
-        <div class="tech-card">
-          <div class="tech-label">ICR</div>
+        <div class="tech-label">ICR</div>
+        <div class="tech-info">
           <div class="tech-name">ICR</div>
           <p class="tech-desc"><strong>Intelligent Character Recognition - Reconocimiento de Caracteres inteligentes:</strong> Reconoce las marcas OMR, también OCR y escritura hecha a mano con lápiz o tinta</p>
         </div>
-        <div class="tech-card">
-          <div class="tech-label">BARCODE</div>
+        <div class="tech-label">BRD</div>
+        <div class="tech-info">
           <div class="tech-name">BARCODE</div>
           <p class="tech-desc"><strong>Optical Barcode Recognition - Reconocimiento Óptico de Código de Barra:</strong> reconoce código de barras QR, Code 3 of 9</p>
         </div>
@@ -581,26 +581,24 @@ import Layout from "../layouts/Layout.astro";
 
   .tech-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-    text-align: left;
-  }
-
-  .tech-card {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+    grid-template-columns: auto 1fr auto 1fr;
+    gap: 20px 30px;
+    align-items: start;
   }
 
   .tech-label {
-    background-color: #24A3D8;
+    background-color: #414141;
     color: #fff;
     font-weight: 700;
     font-size: 16px;
     text-transform: uppercase;
-    padding: 8px 20px;
-    border-radius: 4px;
-    align-self: flex-start;
+    width: 106px;
+    height: 106px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-self: center;
   }
 
   .tech-name {
@@ -608,6 +606,7 @@ import Layout from "../layouts/Layout.astro";
     font-size: 16px;
     font-weight: 700;
     text-transform: uppercase;
+    margin-bottom: 5px;
   }
 
   .tech-desc {
@@ -632,7 +631,6 @@ import Layout from "../layouts/Layout.astro";
     font-weight: 700;
     text-align: center;
     margin-bottom: 30px;
-    text-transform: lowercase;
   }
 
   .remark-cols {
@@ -742,6 +740,8 @@ import Layout from "../layouts/Layout.astro";
 
     .tech-grid {
       grid-template-columns: 1fr;
+      justify-items: center;
+      text-align: center;
     }
 
     @media (min-width: 769px) {
