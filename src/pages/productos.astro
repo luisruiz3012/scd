@@ -21,7 +21,7 @@ import Layout from '../layouts/Layout.astro';
         <a href="/contacto" class="btn">CONTACTO</a>
       </div>
     </div>
-  </section>
+  
 
   <section class="banner-section dark-bg">
     <div class="container banner-content">
@@ -98,8 +98,8 @@ import Layout from '../layouts/Layout.astro';
           </div>
         </div>
         <div class="security-card">
-          <div class="security-img-wrap">
-            <img src="/images/about-us-04.jpg" alt="Crosschex" />
+          <div class="security-img-wrap px-auto">
+						<a href="https://www.anviz.com/crosschex-desk.html"><img src="/images/about-us-04.jpg" alt="Crosschex" /></a>
           </div>
           <div class="security-body">
             <span class="security-brand">crosschex</span>
@@ -277,7 +277,7 @@ import Layout from '../layouts/Layout.astro';
           <span class="reporte-img-label">Reporte 100</span>
         </div>
         <div class="reporte-img-card" data-modal="true" data-index="1">
-          <img src="/images/105.jpeg" alt="Reporte 105" />
+          <img src="/images/105.png" alt="Reporte 105" width="595" height="841" />
           <span class="reporte-img-label">Reporte 105</span>
         </div>
         <div class="reporte-img-card" data-modal="true" data-index="2">
@@ -1172,6 +1172,20 @@ import Layout from '../layouts/Layout.astro';
     height: auto;
     display: block;
   }
+
+  .reporte-img-card[data-index="1"] {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .reporte-img-card[data-index="1"] img {
+    flex: 1;
+    width: 100%;
+    object-fit: cover;
+    object-position: left;
+  }
+
+
 
   .reporte-img-label {
     display: block;
