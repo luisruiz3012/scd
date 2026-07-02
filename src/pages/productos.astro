@@ -141,7 +141,7 @@ import Layout from '../layouts/Layout.astro';
         </div>
         <div class="software-card">
           <div class="software-img-wrap">
-            <a href="https://www.remarksoftware.com/" target="_blank" rel="noopener"><img src="/images/Remark Classic ORM New.png" alt="Remark Software" /></a>
+            <a href="https://www.remarksoftware.com/" target="_blank" rel="noopener"><img src="/images/Productos remark.jpeg" alt="Remark Software" /></a>
           </div>
           <div class="software-body">
             <span class="software-brand">Remark Software</span>
@@ -272,75 +272,84 @@ import Layout from '../layouts/Layout.astro';
       <p class="reportes-subtitle">Opción cruce de variables, reportes personalizados</p>
       <p class="reportes-desc">Adicionalmente a los reportes predeterminados se pueden generar personalizados fácilmente y exportarlos en .PDF o Excel. También tiene conexión con plataformas Moodle y educativas como Partest</p>
       <div class="reportes-images">
-        <div class="reporte-img-card">
-          <img src="/images/100.jpg" alt="Reporte 100" />
+        <div class="reporte-img-card" data-modal="true" data-index="0">
+          <img src="/images/100.jpeg" alt="Reporte 100" />
+          <span class="reporte-img-label">Reporte 100</span>
         </div>
-        <div class="reporte-img-card">
-          <img src="/images/105.jpg" alt="Reporte 105" />
+        <div class="reporte-img-card" data-modal="true" data-index="1">
+          <img src="/images/105.jpeg" alt="Reporte 105" />
+          <span class="reporte-img-label">Reporte 105</span>
         </div>
-        <div class="reporte-img-card">
-          <img src="/images/201.jpg" alt="Reporte 201" />
+        <div class="reporte-img-card" data-modal="true" data-index="2">
+          <img src="/images/201.jpeg" alt="Reporte 201" />
+          <span class="reporte-img-label">Reporte 201</span>
         </div>
       </div>
+
+<div id="report-modal" class="modal-overlay">
+  <span class="modal-close">&times;</span>
+  <span class="modal-prev">&#10094;</span>
+  <span class="modal-next">&#10095;</span>
+  <div class="modal-content-wrap">
+    <img class="modal-content" id="modal-image" src="" alt="" />
+  </div>
+  <div class="modal-caption" id="modal-caption"></div>
+</div>
       <div class="reportes-grid">
           <div class="reportes-col">
             <div class="report-col-header c1">
-              <span class="report-col-num">100</span>
               <span class="report-col-cat">Informes de Clase y Estudiantes</span>
             </div>
             <ul>
-              <li><span class="report-name">Informe de análisis de prueba</span> <span class="report-formats"><span class="fmt-badge pdf">PDF</span><span class="fmt-badge xls">Excel</span><span class="fmt-badge eml">Email</span></span></li>
-              <li><span class="report-name">Informe de Estadísticas de Estudiantes</span> <span class="report-formats"><span class="fmt-badge pdf">PDF</span><span class="fmt-badge xls">Excel</span><span class="fmt-badge eml">Email</span></span></li>
-              <li><span class="report-name">Informe comparativo de las calificaciones</span> <span class="report-formats"><span class="fmt-badge pdf">PDF</span><span class="fmt-badge xls-empty"></span><span class="fmt-badge eml">Email</span></span></li>
-              <li><span class="report-name">Informe de distribución de frecuencia de clase</span> <span class="report-formats"><span class="fmt-badge pdf">PDF</span><span class="fmt-badge xls">Excel</span><span class="fmt-badge eml">Email</span></span></li>
-              <li><span class="report-name">Informe de la Puntuación del Histograma del Estudiante</span> <span class="report-formats"><span class="fmt-badge pdf">PDF</span><span class="fmt-badge xls-empty"></span><span class="fmt-badge eml">Email</span></span></li>
-              <li><span class="report-name">Informe de rendimiento del Estudiante</span> <span class="report-formats"><span class="fmt-badge pdf">PDF</span><span class="fmt-badge xls">Excel</span><span class="fmt-badge eml">Email</span></span></li>
-              <li><span class="report-name">Informe de calificación demográfica</span> <span class="report-formats"><span class="fmt-badge pdf">PDF</span><span class="fmt-badge xls-empty"></span><span class="fmt-badge eml">Email</span></span></li>
+              <li><span class="report-name">100 - Informe de análisis de prueba</span> <span class="report-formats"><span class="fmt-badge pdf">PDF</span><span class="fmt-badge xls">Excel</span><span class="fmt-badge eml">Email</span></span></li>
+              <li><span class="report-name">101 - Informe de Estadísticas de Estudiantes</span> <span class="report-formats"><span class="fmt-badge pdf">PDF</span><span class="fmt-badge xls">Excel</span><span class="fmt-badge eml">Email</span></span></li>
+              <li><span class="report-name">102 - Informe comparativo de las calificaciones</span> <span class="report-formats"><span class="fmt-badge pdf">PDF</span><span class="fmt-badge xls-empty"></span><span class="fmt-badge eml">Email</span></span></li>
+              <li><span class="report-name">103 - Informe de distribución de frecuencia de clase</span> <span class="report-formats"><span class="fmt-badge pdf">PDF</span><span class="fmt-badge xls">Excel</span><span class="fmt-badge eml">Email</span></span></li>
+              <li><span class="report-name">104 - Informe de la Puntuación del Histograma del Estudiante</span> <span class="report-formats"><span class="fmt-badge pdf">PDF</span><span class="fmt-badge xls-empty"></span><span class="fmt-badge eml">Email</span></span></li>
+              <li><span class="report-name">105 - Informe de rendimiento del Estudiante</span> <span class="report-formats"><span class="fmt-badge pdf">PDF</span><span class="fmt-badge xls">Excel</span><span class="fmt-badge eml">Email</span></span></li>
+              <li><span class="report-name">107 - Informe de calificación demográfica</span> <span class="report-formats"><span class="fmt-badge pdf">PDF</span><span class="fmt-badge xls-empty"></span><span class="fmt-badge eml">Email</span></span></li>
             </ul>
           </div>
           <div class="reportes-col">
             <div class="report-col-header c2">
-              <span class="report-col-num">111</span>
               <span class="report-col-cat">Informes de Clase y Estudiantes</span>
             </div>
             <ul>
-              <li><span class="report-name">Informe de aprendizaje de objetivos</span> <span class="report-formats"><span class="fmt-badge pdf">PDF</span><span class="fmt-badge xls">Excel</span><span class="fmt-badge eml">Email</span></span></li>
-              <li><span class="report-name">Informe de rendimiento de los estudiantes</span> <span class="report-formats"><span class="fmt-badge pdf">PDF</span><span class="fmt-badge xls">Excel</span><span class="fmt-badge eml">Email</span></span></li>
-              <li><span class="report-name">Informe Postest de Estudiante</span> <span class="report-formats"><span class="fmt-badge pdf">PDF</span><span class="fmt-badge xls-empty"></span><span class="fmt-badge eml">Email</span></span></li>
-              <li><span class="report-name">Informe de calificaciones del Estudiante</span> <span class="report-formats"><span class="fmt-badge pdf">PDF</span><span class="fmt-badge xls-empty"></span><span class="fmt-badge eml">Email</span></span></li>
-              <li><span class="report-name">Informe de la hoja de respuestas del Estudiante</span> <span class="report-formats"><span class="fmt-badge pdf">PDF</span><span class="fmt-badge xls-empty"></span><span class="fmt-badge eml">Email</span></span></li>
-              <li><span class="report-name">Informe respuestas similares de los Estudiantes</span> <span class="report-formats"><span class="fmt-badge pdf">PDF</span><span class="fmt-badge xls-empty"></span><span class="fmt-badge eml">Email</span></span></li>
-              <li><span class="report-name">Respuesta incorrecta</span> <span class="report-formats"><span class="fmt-badge pdf">PDF</span><span class="fmt-badge xls">Excel</span><span class="fmt-badge eml">Email</span></span></li>
+              <li><span class="report-name">111 - Informe de aprendizaje de objetivos</span> <span class="report-formats"><span class="fmt-badge pdf">PDF</span><span class="fmt-badge xls">Excel</span><span class="fmt-badge eml">Email</span></span></li>
+              <li><span class="report-name">112 - Informe de rendimiento de los estudiantes</span> <span class="report-formats"><span class="fmt-badge pdf">PDF</span><span class="fmt-badge xls">Excel</span><span class="fmt-badge eml">Email</span></span></li>
+              <li><span class="report-name">120 - Informe Postest de Estudiante</span> <span class="report-formats"><span class="fmt-badge pdf">PDF</span><span class="fmt-badge xls-empty"></span><span class="fmt-badge eml">Email</span></span></li>
+              <li><span class="report-name">150 - Informe de calificaciones del Estudiante</span> <span class="report-formats"><span class="fmt-badge pdf">PDF</span><span class="fmt-badge xls-empty"></span><span class="fmt-badge eml">Email</span></span></li>
+              <li><span class="report-name">152 - Informe de la hoja de respuestas del Estudiante</span> <span class="report-formats"><span class="fmt-badge pdf">PDF</span><span class="fmt-badge xls-empty"></span><span class="fmt-badge eml">Email</span></span></li>
+              <li><span class="report-name">160 - Informe respuestas similares de los Estudiantes</span> <span class="report-formats"><span class="fmt-badge pdf">PDF</span><span class="fmt-badge xls-empty"></span><span class="fmt-badge eml">Email</span></span></li>
+              <li><span class="report-name">180 - Respuesta incorrecta</span> <span class="report-formats"><span class="fmt-badge pdf">PDF</span><span class="fmt-badge xls">Excel</span><span class="fmt-badge eml">Email</span></span></li>
             </ul>
           </div>
           <div class="reportes-col">
             <div class="report-col-header c3">
-              <span class="report-col-num">201</span>
               <span class="report-col-cat">Informes de Estadísticas</span>
             </div>
             <ul>
-              <li><span class="report-name">Informe de análisis detallado de los artículos</span> <span class="report-formats"><span class="fmt-badge pdf">PDF</span><span class="fmt-badge xls">Excel</span><span class="fmt-badge eml">Email</span></span></li>
-              <li><span class="report-name">Informe gráfico de análisis de artículos</span> <span class="report-formats"><span class="fmt-badge pdf">PDF</span><span class="fmt-badge xls">Excel</span><span class="fmt-badge eml">Email</span></span></li>
-              <li><span class="report-name">Análisis conciso de artículos</span> <span class="report-formats"><span class="fmt-badge pdf">PDF</span><span class="fmt-badge xls">Excel</span><span class="fmt-badge eml">Email</span></span></li>
-              <li><span class="report-name">Informe conciso de examen</span> <span class="report-formats"><span class="fmt-badge pdf">PDF</span><span class="fmt-badge xls">Excel</span><span class="fmt-badge eml">Email</span></span></li>
-              <li><span class="report-name">Informe del análisis de artículos integrados</span> <span class="report-formats"><span class="fmt-badge pdf">PDF</span><span class="fmt-badge xls-empty"></span><span class="fmt-badge eml">Email</span></span></li>
-              <li><span class="report-name">Informe de estadísticos del examen</span> <span class="report-formats"><span class="fmt-badge pdf">PDF</span><span class="fmt-badge xls">Excel</span><span class="fmt-badge eml">Email</span></span></li>
-              <li><span class="report-name">Informes de estadísticas de artículo del examen</span> <span class="report-formats"><span class="fmt-badge pdf">PDF</span><span class="fmt-badge xls">Excel</span><span class="fmt-badge eml">Email</span></span></li>
+              <li><span class="report-name">201 - Informe de análisis detallado de los artículos</span> <span class="report-formats"><span class="fmt-badge pdf">PDF</span><span class="fmt-badge xls">Excel</span><span class="fmt-badge eml">Email</span></span></li>
+              <li><span class="report-name">203 - Informe gráfico de análisis de artículos</span> <span class="report-formats"><span class="fmt-badge pdf">PDF</span><span class="fmt-badge xls">Excel</span><span class="fmt-badge eml">Email</span></span></li>
+              <li><span class="report-name">204 - Análisis conciso de artículos</span> <span class="report-formats"><span class="fmt-badge pdf">PDF</span><span class="fmt-badge xls">Excel</span><span class="fmt-badge eml">Email</span></span></li>
+              <li><span class="report-name">206 - Informe conciso de examen</span> <span class="report-formats"><span class="fmt-badge pdf">PDF</span><span class="fmt-badge xls">Excel</span><span class="fmt-badge eml">Email</span></span></li>
+              <li><span class="report-name">220 - Informe del análisis de artículos integrados</span> <span class="report-formats"><span class="fmt-badge pdf">PDF</span><span class="fmt-badge xls-empty"></span><span class="fmt-badge eml">Email</span></span></li>
+              <li><span class="report-name">310 - Informe de estadísticos del examen</span> <span class="report-formats"><span class="fmt-badge pdf">PDF</span><span class="fmt-badge xls">Excel</span><span class="fmt-badge eml">Email</span></span></li>
+              <li><span class="report-name">320 - Informes de estadísticas de artículo del examen</span> <span class="report-formats"><span class="fmt-badge pdf">PDF</span><span class="fmt-badge xls">Excel</span><span class="fmt-badge eml">Email</span></span></li>
             </ul>
           </div>
           <div class="reportes-col">
             <div class="report-col-header c4">
-              <span class="report-col-num">330</span>
               <span class="report-col-cat">Informes de Respuesta</span>
             </div>
             <ul>
-              <li><span class="report-name">Informe comparativo de artículos</span> <span class="report-formats"><span class="fmt-badge pdf">PDF</span><span class="fmt-badge xls-empty"></span><span class="fmt-badge eml">Email</span></span></li>
-              <li><span class="report-name">Informe de respuesta por artículo</span> <span class="report-formats"><span class="fmt-badge pdf">PDF</span><span class="fmt-badge xls-empty"></span><span class="fmt-badge eml">Email</span></span></li>
-              <li><span class="report-name">Informe de respuesta del encuestado</span> <span class="report-formats"><span class="fmt-badge pdf">PDF</span><span class="fmt-badge xls-empty"></span><span class="fmt-badge eml">Email</span></span></li>
-              <li><span class="report-name">Informe comparativo de respuestas cambiadas</span> <span class="report-formats"><span class="fmt-badge pdf">PDF</span><span class="fmt-badge xls-empty"></span><span class="fmt-badge eml">Email</span></span></li>
-              <li><span class="report-name">Informe de respuestas cambiada por el articulo</span> <span class="report-formats"><span class="fmt-badge pdf">PDF</span><span class="fmt-badge xls-empty"></span><span class="fmt-badge eml">Email</span></span></li>
-              <li><span class="report-name">Informe comparativo para respuestas cambiadas por Estudiante</span> <span class="report-formats"><span class="fmt-badge pdf">PDF</span><span class="fmt-badge xls-empty"></span><span class="fmt-badge eml">Email</span></span></li>
-              <li><span class="report-name">Informe de cambios de respuesta por artículos estudiantes</span> <span class="report-formats"><span class="fmt-badge pdf">PDF</span><span class="fmt-badge xls-empty"></span><span class="fmt-badge eml">Email</span></span></li>
+              <li><span class="report-name">330 - Informe comparativo de artículos</span> <span class="report-formats"><span class="fmt-badge pdf">PDF</span><span class="fmt-badge xls-empty"></span><span class="fmt-badge eml">Email</span></span></li>
+              <li><span class="report-name">401 - Informe de respuesta por artículo</span> <span class="report-formats"><span class="fmt-badge pdf">PDF</span><span class="fmt-badge xls-empty"></span><span class="fmt-badge eml">Email</span></span></li>
+              <li><span class="report-name">402 - Informe de respuesta del encuestado</span> <span class="report-formats"><span class="fmt-badge pdf">PDF</span><span class="fmt-badge xls-empty"></span><span class="fmt-badge eml">Email</span></span></li>
+              <li><span class="report-name">500 - Informe comparativo de respuestas cambiadas</span> <span class="report-formats"><span class="fmt-badge pdf">PDF</span><span class="fmt-badge xls-empty"></span><span class="fmt-badge eml">Email</span></span></li>
+              <li><span class="report-name">503 - Informe de respuestas cambiada por el articulo</span> <span class="report-formats"><span class="fmt-badge pdf">PDF</span><span class="fmt-badge xls-empty"></span><span class="fmt-badge eml">Email</span></span></li>
+              <li><span class="report-name">510 - Informe comparativo para respuestas cambiadas por Estudiante</span> <span class="report-formats"><span class="fmt-badge pdf">PDF</span><span class="fmt-badge xls-empty"></span><span class="fmt-badge eml">Email</span></span></li>
+              <li><span class="report-name">520 - Informe de cambios de respuesta por artículos estudiantes</span> <span class="report-formats"><span class="fmt-badge pdf">PDF</span><span class="fmt-badge xls-empty"></span><span class="fmt-badge eml">Email</span></span></li>
             </ul>
           </div>
         </div>
@@ -582,6 +591,14 @@ import Layout from '../layouts/Layout.astro';
     border-bottom: 1px solid #f0f0f0;
   }
 
+  .software-img-wrap a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+
   .software-img-wrap img {
     display: block;
     max-width: 80%;
@@ -592,6 +609,85 @@ import Layout from '../layouts/Layout.astro';
 
   .software-card:hover .software-img-wrap img {
     transform: scale(1.05);
+  }
+
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    inset: 0;
+    background: rgba(0,0,0,0.9);
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .modal-overlay.active {
+    display: flex;
+  }
+
+  .modal-content-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 90vw;
+    max-height: 85vh;
+  }
+
+  .modal-content {
+    max-width: 100%;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: 6px;
+    box-shadow: 0 4px 30px rgba(0,0,0,0.5);
+  }
+
+  .modal-close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10000;
+    line-height: 1;
+    transition: color 0.2s;
+  }
+
+  .modal-close:hover {
+    color: #24A3D8;
+  }
+
+  .modal-prev,
+  .modal-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10000;
+    padding: 16px;
+    user-select: none;
+    transition: color 0.2s;
+    line-height: 1;
+  }
+
+  .modal-prev { left: 20px; }
+  .modal-next { right: 20px; }
+
+  .modal-prev:hover,
+  .modal-next:hover {
+    color: #24A3D8;
+  }
+
+  .modal-caption {
+    color: #ccc;
+    font-size: 14px;
+    padding: 12px 20px;
+    text-align: center;
   }
 
   .software-body {
@@ -1077,6 +1173,16 @@ import Layout from '../layouts/Layout.astro';
     display: block;
   }
 
+  .reporte-img-label {
+    display: block;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    color: #323946;
+    padding: 8px 0;
+    background: #fff;
+  }
+
   .reportes-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -1315,6 +1421,7 @@ import Layout from '../layouts/Layout.astro';
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
+    // Galeria zoom toggle
     const imgWraps = document.querySelectorAll(".galeria-img-wrap");
     imgWraps.forEach((wrap) => {
       wrap.addEventListener("click", () => {
@@ -1323,6 +1430,67 @@ import Layout from '../layouts/Layout.astro';
           img.classList.toggle("zoomed");
         }
       });
+    });
+
+    // Report images modal lightbox
+    const modal = document.getElementById("report-modal");
+    const modalImg = document.getElementById("modal-image");
+    const modalCaption = document.getElementById("modal-caption");
+    const modalClose = modal.querySelector(".modal-close");
+    const modalPrev = modal.querySelector(".modal-prev");
+    const modalNext = modal.querySelector(".modal-next");
+
+    const reportImages = Array.from(
+      document.querySelectorAll('.reporte-img-card[data-modal="true"]')
+    );
+
+    let currentIndex = 0;
+
+    function openModal(index) {
+      if (!reportImages.length) return;
+      currentIndex = index;
+      const wrap = reportImages[currentIndex];
+      const img = wrap.querySelector("img");
+      modalImg.src = img.src;
+      modalImg.alt = img.alt;
+      modalCaption.textContent = img.alt;
+      modal.classList.add("active");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeModal() {
+      modal.classList.remove("active");
+      document.body.style.overflow = "";
+    }
+
+    function navigate(direction) {
+      if (!reportImages.length) return;
+      currentIndex =
+        (currentIndex + direction + reportImages.length) %
+        reportImages.length;
+      openModal(currentIndex);
+    }
+
+    reportImages.forEach((wrap) => {
+      wrap.addEventListener("click", () => {
+        const index = parseInt(wrap.dataset.index, 10);
+        openModal(index);
+      });
+    });
+
+    modalClose.addEventListener("click", closeModal);
+    modalPrev.addEventListener("click", () => navigate(-1));
+    modalNext.addEventListener("click", () => navigate(1));
+
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) closeModal();
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (!modal.classList.contains("active")) return;
+      if (e.key === "Escape") closeModal();
+      if (e.key === "ArrowLeft") navigate(-1);
+      if (e.key === "ArrowRight") navigate(1);
     });
   });
 </script>
