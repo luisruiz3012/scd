@@ -63,6 +63,11 @@ const { title = "SCD", activePage = "" } = Astro.props as Props;
             >VIDEOS</a
           >
           <a
+            href="/doculus-lumus"
+            class="nav-link {activePage === 'doculus' ? 'active' : ''}"
+            >DOCULUS LUMUS</a
+          >
+          <a
             href="/contacto"
             class="nav-link {activePage === 'contacto' ? 'active' : ''}"
             >CONTACTO</a
@@ -395,6 +400,18 @@ const { title = "SCD", activePage = "" } = Astro.props as Props;
 
     .nav-menu {
       display: flex !important;
+    }
+  }
+
+  @media (min-width: 769px) and (max-width: 1260px) {
+    .header-inner {
+      gap: 15px;
+    }
+
+    .nav-link {
+      padding: 10px 9px;
+      font-size: 12px;
+      letter-spacing: 0.5px;
     }
   }
 

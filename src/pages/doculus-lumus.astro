@@ -1,0 +1,1183 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const SHOP = 'https://shop.doculuslumus.com/es/collections/doculus-lumus-devices';
+const BRAND = 'https://www.doculuslumus.com';
+
+const tecnologia = [
+  {
+    titulo: 'Luz blanca de incidencia',
+    texto:
+      '4 LEDs de luz blanca intensa para revisar microtexto y nanotexto, además de determinar la técnica de impresión (láser, tinta, offset) y detectar manipulaciones.',
+  },
+  {
+    titulo: 'Luz UV 365 nm',
+    texto:
+      '4 LEDs UV de potencia extra que permiten examinar los colores de seguridad UV, fibras y nanofibras de pasaportes y billetes, incluso a corta distancia.',
+  },
+  {
+    titulo: 'Luz oblicua rotativa',
+    texto:
+      '8 LEDs que iluminan en pasos de 45° para revelar detalles en relieve, intaglio, gofrados y hologramas con cambio de color (OVI y DOVID).',
+  },
+  {
+    titulo: 'Modo linterna y luz fija',
+    texto:
+      'Modo linterna para máxima potencia y modo de luz fija por 1 minuto, ideal para la documentación fotográfica sin depender de una aplicación.',
+  },
+  {
+    titulo: 'Modo zurdo / derecho',
+    texto:
+      'Activación con el pulgar para usuarios diestros y zurdos, garantizando el control total del equipo con una sola mano.',
+  },
+  {
+    titulo: 'Carcasa robusta',
+    texto:
+      'Fabricado en Austria, IP54, resistente a caídas de hasta 1.5 metros y con lentes acromáticas, fieles al color y sin distorsión.',
+  },
+];
+
+const modelos = [
+  {
+    titulo: 'Frontline Edition 15x',
+    perfil: 'Agentes de primera línea, guardias fronterizos, funcionarios de aduana y control de migraciones.',
+    descripcion:
+      'La configuración esencial para la verificación rápida en campo. Diseñada para decidir en segundos si un documento es auténtico o no.',
+    caracteristicas: [
+      'Lentes de vidrio de alta calidad 15x',
+      'Luz blanca de incidencia (4 LEDs)',
+      'Luz UV 365 nm (4 LEDs)',
+      'Luz oblicua rotativa (8 LEDs)',
+      'Modo linterna y luz fija',
+      'Modo zurdo / derecho',
+      'Carcasa IP54, resistente a caídas de 1.5 m',
+      'Opcionales: FUV y RFID (ICAO quick check)',
+      'Energía: 2 pilas AAA incluidas · Peso: 132 g',
+    ],
+  },
+  {
+    titulo: 'Expert Edition 15x',
+    perfil: 'Expertos en documentos, impresores de seguridad y oficiales de segunda línea.',
+    descripcion:
+      'Configuración completa para análisis detallado. El aumento 15x ofrece el mejor equilibrio entre detalle y campo de visión.',
+    caracteristicas: [
+      'Lentes de vidrio de alta calidad 15x',
+      'Toda la iluminación estándar',
+      'Linterna UV frontal (FUV)',
+      'Verificación RFID ICAO',
+      'Batería de ion-litio 300 mAh (cable USB-C)',
+      'Tarjeta retícula lineal, radial y angular',
+      'Opcionales: IR 870 nm, UVB 313 nm, UVC 254 nm y láser Anti-Stokes (AS) 980 nm',
+      'Energía: 2 pilas AAA + batería LI · Peso: 142 g',
+    ],
+  },
+  {
+    titulo: 'Expert Edition 22x',
+    perfil: 'Peritos forenses, laboratorios de seguridad y análisis exhaustivo de marcas de seguridad.',
+    descripcion:
+      'El aumento 22x está pensado para enfocarse en los detalles más finos de impresión de seguridad y las desviaciones de superficie.',
+    caracteristicas: [
+      'Máximo aumento: lentes de vidrio 22x',
+      'Toda la iluminación estándar',
+      'Linterna UV frontal (FUV)',
+      'Verificación RFID ICAO',
+      'Láser Anti-Stokes (AS) 980 nm',
+      'UVB 313 nm y UVC 254 nm',
+      'Opcionales: IR 870 nm y batería de ion-litio USB-C',
+      'Energía: 2 pilas AAA + batería LI · Peso: 142 g',
+    ],
+  },
+];
+
+const opciones = [
+  { sigla: 'FUV', texto: 'Linterna UV frontal de 365 nm para revisar tintas y fibras UV a distancia.' },
+  { sigla: 'RFID', texto: 'Verificación rápida ICAO para pasaportes electrónicos (tipos A/B e ISO 14443).' },
+  { sigla: 'AS', texto: 'Láser infrarrojo 980 nm para detectar tintas y características Anti-Stokes.' },
+  { sigla: 'IR', texto: 'LED infrarrojo de 870 nm para lectura de marcas invisibles.' },
+  { sigla: 'UVB/C', texto: '2 LEDs UVB 313 nm y 2 LEDs UVC 254 nm para fluorescencia UV.' },
+  { sigla: 'LI', texto: 'Batería de ion-litio 300 mAh con cable USB-C y cambio automático de fuente.' },
+];
+
+const kits = [
+  {
+    titulo: 'Set de examen portátil',
+    etiqueta: 'Mobile Examination Set',
+    texto:
+      'Equipa al oficial para la verificación rápida en campo. Desde el punto de control hasta el archivo, con las imágenes listas para el informe.',
+    incluye: [
+      'Doculus Lumus Expert Edition 15x o 22x',
+      'Set Snap&Cam: adaptador y cámara USB Ipevo de 8 MP',
+      'Acceso a la Webapp para documentar y compartir',
+      'Maleta de examen compacta y resistente, menor a 1 kg',
+      'Clip para smartphone, correa de seguridad y guías rápidas',
+    ],
+  },
+  {
+    titulo: 'Set Snap&Go',
+    etiqueta: 'Snap&Go Set',
+    texto:
+      'Acople y empiece a documentar al instante con su smartphone. Ideal para operadores de primera línea que necesitan tomar fotos rápidamente, en cualquier momento y lugar.',
+    incluye: [
+      'Adaptador Snap&Go preconfigurado',
+      'Funda de móvil compatible con conexión Quadlock',
+      'Cámara fijada de forma ortogonal sobre la lente, sin distorsión',
+      'Las imágenes se capturan o suben directo a su aplicación policial',
+      'No requiere ninguna aplicación adicional',
+    ],
+  },
+  {
+    titulo: 'Set Snap&Cam',
+    etiqueta: 'Snap&Cam Set',
+    texto:
+      'Visualiza todas las funciones de iluminación de Doculus Lumus en su PC. Ideal para operadores de segunda línea, formadores y expertos.',
+    incluye: [
+      'Adaptador Snap&Cam para Doculus Lumus',
+      'Cámara USB Ipevo de 8 megapíxeles',
+      'Plug & Play con la Webapp incluida de Doculus Lumus',
+      'Exportación de la imagen en directo para documentación',
+    ],
+  },
+  {
+    titulo: 'Maletín de entrenamiento / operaciones',
+    etiqueta: 'Training/Operation Case',
+    texto:
+      'Equipa profesionalmente a una unidad completa de agentes en servicio o a expertos en documentos para dar formaciones. Configuración individual bajo solicitud.',
+    incluye: [
+      '14 dispositivos Doculus Lumus: 12 Frontline 15x, 2 Expert 15x y 22x',
+      '4 Doculamp 365 para visualizar una página completa bajo luz UV',
+      '1 set Snap&Cam para cursos de formación',
+      '60 muestras de visado con diversas características de seguridad',
+      'Clip para smartphone, correa de seguridad y material informativo',
+    ],
+  },
+  {
+    titulo: 'Doculus Lumus Go Set',
+    etiqueta: 'Go Set',
+    texto:
+      'Pack de 10 dispositivos Doculus Lumus para desplegar en toda una unidad o centro de verificación de una sola vez.',
+    incluye: [
+      '10 dispositivos Doculus Lumus',
+      'Accesorios estándar de la serie',
+      'Ideal para academias, batallones y unidades completas',
+    ],
+  },
+  {
+    titulo: 'Doculamp 365',
+    etiqueta: 'Linterna UV',
+    texto:
+      'Visualiza al instante una página completa bajo luz UV de 365 nm. Complemento ideal para revisar documentos y muestras de visado.',
+    incluye: [
+      'Iluminación UV de 365 nm',
+      'Visualización de una página completa',
+      'Complemento del maletín de entrenamiento',
+    ],
+  },
+];
+
+const aplicaciones = [
+  {
+    titulo: 'Control fronterizo',
+    texto:
+      'Verificación de pasaportes y visas en puestos de frontera, carreteras, trenes y aeropuertos.',
+  },
+  {
+    titulo: 'Policía y primera línea',
+    texto:
+      'Agentes que necesitan decidir en segundos si un documento de identidad es legítimo.',
+  },
+  {
+    titulo: 'Aduanas',
+    texto:
+      'Control de documentos de identidad e inspección de mercancías en los puntos de ingreso al país.',
+  },
+  {
+    titulo: 'Peritaje forense',
+    texto:
+      'Expertos en documentos, peritos y laboratorios que analizan marcas de seguridad detalladamente.',
+  },
+  {
+    titulo: 'Banca y valores',
+    texto:
+      'Verificación de documentos de identidad, cheques y billetes de banca.',
+  },
+  {
+    titulo: 'Formación',
+    texto:
+      'Instituciones y centros de capacitación que entrenan a su personal con el maletín completo.',
+  },
+];
+
+const descargas = [
+  {
+    titulo: 'Set de examen portátil',
+    subtitulo: 'Mobile Examination Set',
+    texto:
+      'El kit móvil de verificación de documentos para cualquier situación: dispositivo, cámara, Webapp y maleta de transporte.',
+    archivo: '/files/Flyer%20Mobile%20Examination%20Set.pdf',
+    peso: '963 KB',
+    hojas: '1 página',
+  },
+  {
+    titulo: 'Sets Snap&Go y Snap&Cam',
+    subtitulo: 'Snap&Go Set · Snap&Cam Set',
+    texto:
+      'Fotografía profesional de documentos con smartphone y visualización de todas las funciones de iluminación en su PC.',
+    archivo: '/files/Flyer%20Snap%26Go%2C%20Snap%26Cam%20ES_c.pdf',
+    peso: '434 KB',
+    hojas: '2 páginas',
+  },
+  {
+    titulo: 'Maletín de entrenamiento / operaciones',
+    subtitulo: 'Training/Operation Case',
+    texto:
+      'La configuración estándar del maletín: 14 dispositivos, 4 Doculamp 365, set Snap&Cam y 60 muestras de visado.',
+    archivo: '/files/Flyer%20Training%20Operation%20Case%20ES.pdf',
+    peso: '3.8 MB',
+    hojas: '2 páginas',
+  },
+];
+---
+
+<Layout title="SCD | DOCULUS LUMUS" activePage="doculus">
+
+  <section class="page-heading">
+    <div class="container">
+      <h1>DOCULUS LUMUS</h1>
+    </div>
+  </section>
+
+  <section class="intro-section">
+    <div class="container intro-grid">
+      <div class="intro-image">
+        <a
+          href="https://www.doculuslumus.com"
+          target="_blank"
+          rel="noopener"
+          aria-label="Doculus Lumus"
+        >
+          <img src="/images/Doculus%20Lumus.png" alt="Doculus Lumus" width="600" height="219" />
+        </a>
+      </div>
+      <div class="intro-content">
+        <h2>VERIFICACIÓN DE DOCUMENTOS EN 30 SEGUNDOS</h2>
+        <p>
+          <strong>Doculus Lumus®</strong> es un fabricante de dispositivos móviles de verificación de
+          documentos. Su equipo es utilizado por organizaciones, peritos forenses y agencias
+          gubernamentales en todo el mundo, especialmente en el contexto del control fronterizo.
+        </p>
+        <p>
+          En la mayoría de los casos el agente de primera línea dispone de unos 30 segundos para
+          revisar un documento y decidir si hay una falsificación. Con Doculus Lumus® eso es
+          suficiente: un solo equipo reúne la iluminación que un perito usaría en el laboratorio.
+        </p>
+        <p>
+          Fabricados en Austria, IP54 y resistentes a caídas de 1.5 metros, con lentes acromáticas
+          fieles al color y sin distorsión, en aumentos de <strong>15x</strong> y
+          <strong>22x</strong>. La marca cuenta con patentes en la UE y EE. UU.
+        </p>
+        <a href="/contacto" class="btn">CONTACTO</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="banner-section dark-bg">
+    <div class="container banner-content">
+      <p>see and share the truth inside — vea la verdad en 30 segundos con doculus lumus</p>
+      <a href={SHOP} target="_blank" rel="noopener" class="btn">TIENDA EN LÍNEA</a>
+    </div>
+  </section>
+
+  <section class="tech-section">
+    <div class="container">
+      <h2 class="section-title">TECNOLOGÍA DE ILUMINACIÓN</h2>
+      <div class="tech-grid-cards">
+        {tecnologia.map((t, i) => (
+          <div class="tech-card">
+            <div class="tech-icon">
+              {i === 0 && (
+                <svg viewBox="0 0 64 64" fill="none">
+                  <rect x="18" y="10" width="24" height="34" rx="3" stroke="#fff" stroke-width="2" />
+                  <line x1="24" y1="19" x2="36" y2="19" stroke="#fff" stroke-width="2" stroke-linecap="round" />
+                  <line x1="24" y1="26" x2="36" y2="26" stroke="#fff" stroke-width="2" stroke-linecap="round" />
+                  <line x1="24" y1="33" x2="32" y2="33" stroke="#fff" stroke-width="2" stroke-linecap="round" />
+                  <path d="M50 16l6 6-16 16H34v-6l16-16z" stroke="#EFBD1A" stroke-width="2" fill="none" stroke-linejoin="round" />
+                </svg>
+              )}
+              {i === 1 && (
+                <svg viewBox="0 0 64 64" fill="none">
+                  <circle cx="32" cy="32" r="11" stroke="#fff" stroke-width="2" />
+                  <path d="M32 6v9M32 49v9M6 32h9M49 32h9M13.6 13.6l6.4 6.4M44 44l6.4 6.4M50.4 13.6L44 20M20 44l-6.4 6.4" stroke="#EFBD1A" stroke-width="2" stroke-linecap="round" />
+                </svg>
+              )}
+              {i === 2 && (
+                <svg viewBox="0 0 64 64" fill="none">
+                  <circle cx="32" cy="32" r="8" stroke="#fff" stroke-width="2" />
+                  <path d="M32 8l-7 10M32 8l7 10M56 32l-10-7M56 32l-10 7M32 56l-7-10M32 56l7-10M8 32l10-7M8 32l10 7" stroke="#EFBD1A" stroke-width="2" stroke-linecap="round" />
+                </svg>
+              )}
+              {i === 3 && (
+                <svg viewBox="0 0 64 64" fill="none">
+                  <path d="M26 12h12l8 10v4H18v-4l8-10z" stroke="#fff" stroke-width="2" stroke-linejoin="round" />
+                  <rect x="18" y="26" width="28" height="20" rx="3" stroke="#fff" stroke-width="2" />
+                  <line x1="26" y1="33" x2="38" y2="33" stroke="#EFBD1A" stroke-width="2" stroke-linecap="round" />
+                  <line x1="26" y1="40" x2="34" y2="40" stroke="#EFBD1A" stroke-width="2" stroke-linecap="round" />
+                </svg>
+              )}
+              {i === 4 && (
+                <svg viewBox="0 0 64 64" fill="none">
+                  <path d="M20 40V24a6 6 0 1112 0v8M32 32v-8a6 6 0 1112 0v16" stroke="#fff" stroke-width="2" stroke-linecap="round" />
+                  <path d="M20 40v4a4 4 0 004 4h8M8 32h8M48 32h8" stroke="#EFBD1A" stroke-width="2" stroke-linecap="round" />
+                  <path d="M12 28l-4 4 4 4M52 28l4 4-4 4" stroke="#EFBD1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              )}
+              {i === 5 && (
+                <svg viewBox="0 0 64 64" fill="none">
+                  <path d="M32 10L16 18v12c0 13 7 20 16 22 9-2 16-9 16-22V18L32 10z" stroke="#fff" stroke-width="2" stroke-linejoin="round" />
+                  <path d="M26 32l4 4 8-8" stroke="#EFBD1A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              )}
+            </div>
+            <h3>{t.titulo}</h3>
+            <p>{t.texto}</p>
+          </div>
+        ))}
+      </div>
+      <p class="tech-note">
+        Dimensiones: 108 × 63 × 28 mm · IP54 · Caída hasta 1.5 m · Garantía de 2 años ·
+        Incluidos de serie: clip para smartphone, muestra de visado, correa de seguridad, paño de
+        limpieza, guía rápida y tarjeta de referencia.
+      </p>
+    </div>
+  </section>
+
+  <section class="models-section">
+    <div class="container">
+      <h2 class="section-title">MODELOS DISPONIBLES</h2>
+      <p class="models-lead">
+        Elija la edición y el aumento según su campo de trabajo
+      </p>
+      <div class="models-cols">
+        {modelos.map((m) => (
+          <div class="model-col">
+            <h3>{m.titulo}</h3>
+            <span class="model-profile">{m.perfil}</span>
+            <p class="model-desc">{m.descripcion}</p>
+            <ul>
+              {m.caracteristicas.map((c) => (
+                <li>{c}</li>
+              ))}
+            </ul>
+            <a href="/contacto" class="btn">COTIZAR</a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="options-section dark-bg">
+    <div class="container">
+      <h2 class="section-title">FUNCIONES OPCIONALES</h2>
+      <p class="options-lead">Configure su dispositivo según el nivel de análisis que necesita</p>
+      <div class="options-grid">
+        {opciones.map((o) => (
+          <div class="option-item">
+            <h3>{o.sigla}</h3>
+            <p>{o.texto}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="kits-section">
+    <div class="container">
+      <h2 class="section-title">KITS Y MALETINES</h2>
+      <p class="models-lead">Del primer dispositivo a una unidad completa dotada</p>
+      <div class="kits-grid">
+        {kits.map((k) => (
+          <div class="kit-card">
+            <h3>{k.titulo}</h3>
+            <span class="kit-label">{k.etiqueta}</span>
+            <p>{k.texto}</p>
+            <ul>
+              {k.incluye.map((i) => (
+                <li>{i}</li>
+              ))}
+            </ul>
+            <a href="/contacto" class="btn">COTIZAR</a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="apps-section">
+    <div class="container">
+      <h2 class="section-title">APLICACIONES</h2>
+      <div class="columns-3">
+        {aplicaciones.map((a) => (
+          <div class="col">
+            <h3>{a.titulo}</h3>
+            <p>{a.texto}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="banner-section dark-bg">
+    <div class="container banner-content">
+      <p>detectar, documentar y formar: el kit móvil de verificación de documentos para cualquier situación</p>
+      <a href="/contacto" class="btn">CONTACTO</a>
+    </div>
+  </section>
+
+  <section class="downloads-section">
+    <div class="container">
+      <h2 class="section-title">DESCARGAR FLYERS</h2>
+      <p class="models-lead">Documentación oficial en español para compartir con su equipo</p>
+      <div class="downloads-grid">
+        {descargas.map((d) => (
+          <div class="download-card">
+            <div class="download-img-wrap">
+              <svg viewBox="0 0 64 64" fill="none" width="64" height="64">
+                <path d="M14 6h24l12 12v40H14V6z" stroke="#24A3D8" stroke-width="2" stroke-linejoin="round" />
+                <path d="M38 6v12h12" stroke="#24A3D8" stroke-width="2" stroke-linejoin="round" />
+                <path d="M32 30v16M24 40l8 8 8-8" stroke="#EFBD1A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+                <line x1="22" y1="52" x2="42" y2="52" stroke="#EFBD1A" stroke-width="2.5" stroke-linecap="round" />
+              </svg>
+            </div>
+            <div class="download-body">
+              <span class="download-label">{d.subtitulo}</span>
+              <h3>{d.titulo}</h3>
+              <p>{d.texto}</p>
+              <div class="download-meta">
+                <span>PDF</span>
+                <span>{d.hojas}</span>
+                <span>{d.peso}</span>
+              </div>
+              <a href={d.archivo} download class="btn">DESCARGAR PDF</a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <h2>¿Necesitas una solución a la medida?</h2>
+      <p class="cta-lead">
+        Solicite una cotización, una demostración o capacitación para su personal. Atendemos a
+        gobierno, migración, aduanas, banca, industria y centros de formación.
+      </p>
+      <a href="/contacto" class="btn-contacto">CONTACTO</a>
+      <p class="cta-links">
+        <a href={BRAND} target="_blank" rel="noopener">www.doculuslumus.com</a> ·
+        <a href={SHOP} target="_blank" rel="noopener">Tienda en línea</a> ·
+        <a href="https://cam.doculuslumus.com" target="_blank" rel="noopener">Webapp</a>
+      </p>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  /* ---------- Encabezado de página ---------- */
+  .page-heading {
+    background: linear-gradient(135deg, #323946 0%, #1e2530 100%);
+    padding: 40px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .page-heading::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: #EFBD1A;
+    border-radius: 2px;
+  }
+
+  .page-heading h1 {
+    color: #fff;
+    font-size: 26px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+  }
+
+  /* ---------- Botones ---------- */
+  .btn {
+    display: inline-block;
+    background-color: #24A3D8;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 12px 30px;
+    border-radius: 4px;
+    transition: 0.6s;
+  }
+
+  .btn:hover {
+    background-color: #EFBD1A;
+    color: #fff;
+  }
+
+  .btn-contacto {
+    display: inline-block;
+    background: #24A3D8;
+    color: #fff;
+    padding: 12px 30px;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    transition: 0.3s;
+  }
+
+  .btn-contacto:hover {
+    background: #EFBD1A;
+    color: #fff;
+  }
+
+  /* ---------- Títulos ---------- */
+  .section-title {
+    color: #323946;
+    font-size: 26px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+  }
+
+  .dark-bg {
+    background-color: #323946;
+  }
+
+  .dark-bg .section-title {
+    color: #fff;
+  }
+
+  .models-lead,
+  .options-lead {
+    text-align: center;
+    font-size: 15px;
+    line-height: 1.8;
+    color: #666;
+    max-width: 900px;
+    margin: 0 auto 40px;
+  }
+
+  .dark-bg .models-lead,
+  .dark-bg .options-lead {
+    color: #ccc;
+  }
+
+  /* ---------- Intro ---------- */
+  .intro-section {
+    padding: 60px 0;
+  }
+
+  .intro-grid {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+  }
+
+  .intro-image {
+    flex: 0 0 470px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 40px 34px;
+    text-align: center;
+  }
+
+  .intro-image a {
+    display: block;
+  }
+
+  .intro-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .intro-content h2 {
+    color: #323946;
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    line-height: 1.4;
+    position: relative;
+    padding-bottom: 15px;
+  }
+
+  .intro-content h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: #24A3D8;
+    border-radius: 2px;
+  }
+
+  .intro-content p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #666;
+    margin-bottom: 20px;
+  }
+
+  .intro-content p strong {
+    color: #323946;
+  }
+
+  /* ---------- Banner oscuro ---------- */
+  .banner-section {
+    padding: 50px 0;
+  }
+
+  .banner-content {
+    text-align: center;
+  }
+
+  .banner-content p {
+    color: #fff;
+    font-size: 16px;
+    line-height: 1.6;
+    max-width: 900px;
+    margin: 0 auto 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  /* ---------- Tecnología ---------- */
+  .tech-section {
+    padding: 60px 0;
+    background: #f8f9fa;
+  }
+
+  .tech-grid-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+
+  .tech-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 32px 28px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .tech-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+  }
+
+  .tech-icon {
+    width: 72px;
+    height: 72px;
+    background: linear-gradient(135deg, #24A3D8, #1a7aa8);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(36, 163, 216, 0.3);
+  }
+
+  .tech-icon svg {
+    width: 34px;
+    height: 34px;
+  }
+
+  .tech-card h3 {
+    color: #323946;
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    line-height: 1.3;
+  }
+
+  .tech-card p {
+    font-size: 13px;
+    line-height: 1.7;
+    color: #666;
+  }
+
+  .tech-note {
+    font-size: 13px;
+    line-height: 1.8;
+    color: #888;
+    text-align: center;
+    max-width: 900px;
+    margin: 35px auto 0;
+  }
+
+  /* ---------- Modelos ---------- */
+  .models-section {
+    padding: 60px 0;
+  }
+
+  .models-cols {
+    display: flex;
+    gap: 30px;
+  }
+
+  .model-col {
+    flex: 1;
+    background: #fff;
+    padding: 30px;
+    border-top: 3px solid #24A3D8;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .model-col h3 {
+    color: #323946;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+  }
+
+  .model-profile {
+    display: block;
+    color: #24A3D8;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    line-height: 1.5;
+    margin-bottom: 15px;
+  }
+
+  .model-desc {
+    font-size: 13px;
+    line-height: 1.7;
+    color: #666;
+    margin-bottom: 20px;
+  }
+
+  .model-col ul {
+    list-style: none;
+    margin-bottom: 25px;
+    flex: 1;
+  }
+
+  .model-col ul li {
+    font-size: 13px;
+    color: #666;
+    padding: 3px 0;
+    padding-left: 15px;
+    position: relative;
+  }
+
+  .model-col ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 12px;
+    width: 6px;
+    height: 6px;
+    background: #00BFFF;
+    border-radius: 50%;
+  }
+
+  .model-col .btn {
+    align-self: flex-start;
+  }
+
+  /* ---------- Funciones opcionales ---------- */
+  .options-section {
+    padding: 60px 0;
+  }
+
+  .options-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+
+  .option-item {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 28px 24px;
+  }
+
+  .option-item h3 {
+    color: #EFBD1A;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .option-item p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #f4f4f4;
+  }
+
+  /* ---------- Kits ---------- */
+  .kits-section {
+    padding: 60px 0;
+  }
+
+  .kits-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+
+  .kit-card {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s;
+  }
+
+  .kit-card:hover {
+    background: #fff;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+  }
+
+  .kit-card h3 {
+    color: #323946;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    line-height: 1.3;
+  }
+
+  .kit-label {
+    display: block;
+    color: #24A3D8;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+  }
+
+  .kit-card > p {
+    font-size: 13px;
+    line-height: 1.7;
+    color: #666;
+    margin-bottom: 15px;
+  }
+
+  .kit-card ul {
+    list-style: none;
+    margin-bottom: 25px;
+    flex: 1;
+  }
+
+  .kit-card ul li {
+    font-size: 13px;
+    color: #666;
+    padding: 3px 0;
+    padding-left: 15px;
+    position: relative;
+  }
+
+  .kit-card ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 12px;
+    width: 6px;
+    height: 6px;
+    background: #00BFFF;
+    border-radius: 50%;
+  }
+
+  .kit-card .btn {
+    align-self: flex-start;
+  }
+
+  /* ---------- Aplicaciones ---------- */
+  .apps-section {
+    padding: 60px 0;
+    background: #f8f9fa;
+  }
+
+  .columns-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    text-align: left;
+  }
+
+  .col h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #24A3D8;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  .col p {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #666;
+    margin-bottom: 10px;
+  }
+
+  /* ---------- Descargas ---------- */
+  .downloads-section {
+    padding: 60px 0;
+  }
+
+  .downloads-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+
+  .download-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .download-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+  }
+
+  .download-img-wrap {
+    background: #f8f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    height: 180px;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .download-body {
+    padding: 28px 26px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .download-label {
+    display: block;
+    color: #24A3D8;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .download-body h3 {
+    color: #323946;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    line-height: 1.3;
+  }
+
+  .download-body > p {
+    font-size: 13px;
+    line-height: 1.7;
+    color: #666;
+    margin-bottom: 15px;
+  }
+
+  .download-meta {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 22px;
+    flex-wrap: wrap;
+  }
+
+  .download-meta span {
+    background: #f1f3f5;
+    color: #777;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 4px 10px;
+    border-radius: 4px;
+  }
+
+  .download-body .btn {
+    align-self: flex-start;
+    margin-top: auto;
+  }
+
+  /* ---------- CTA ---------- */
+  .cta-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('/images/home-slide-1.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 60px 0;
+    text-align: center;
+  }
+
+  .cta-section h2 {
+    font-size: 28px;
+    color: #fff;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+
+  .cta-lead {
+    font-size: 16px;
+    color: #f4f4f4;
+    margin-bottom: 25px;
+  }
+
+  .cta-links {
+    font-size: 13px;
+    color: #ccc;
+    margin: 25px 0 0;
+  }
+
+  .cta-links a {
+    color: #fff;
+    text-decoration: underline;
+  }
+
+  .cta-links a:hover {
+    color: #EFBD1A;
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 992px) {
+    .intro-grid {
+      flex-direction: column;
+    }
+
+    .intro-image {
+      flex: none;
+      width: 100%;
+      max-width: 500px;
+    }
+
+    .models-cols {
+      flex-direction: column;
+    }
+  }
+
+  @media (max-width: 992px) {
+    .tech-grid-cards,
+    .options-grid,
+    .kits-grid,
+    .columns-3,
+    .downloads-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .page-heading {
+      padding: 30px 0;
+    }
+
+    .page-heading h1 {
+      font-size: 18px;
+      letter-spacing: 2px;
+    }
+
+    .section-title {
+      font-size: 20px;
+    }
+
+    .tech-grid-cards,
+    .options-grid,
+    .kits-grid,
+    .columns-3,
+    .downloads-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .intro-section,
+    .tech-section,
+    .models-section,
+    .options-section,
+    .kits-section,
+    .apps-section,
+    .downloads-section {
+      padding: 40px 0;
+    }
+
+    .models-lead,
+    .options-lead {
+      margin-bottom: 28px;
+      font-size: 14px;
+    }
+
+    .col {
+      text-align: center;
+    }
+
+    .tech-icon {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .page-heading h1 {
+      font-size: 15px;
+    }
+
+    .banner-content p {
+      font-size: 14px;
+    }
+
+    .cta-section h2 {
+      font-size: 20px;
+    }
+
+    .btn,
+    .btn-contacto {
+      display: block;
+      width: 100%;
+    }
+
+    .model-col .btn,
+    .kit-card .btn,
+    .download-body .btn {
+      align-self: stretch;
+    }
+  }
+</style>
