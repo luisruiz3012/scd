@@ -1,9 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-const SHOP = 'https://shop.doculuslumus.com/es/collections/doculus-lumus-devices';
-const BRAND = 'https://www.doculuslumus.com';
-
 const tecnologia = [
   {
     titulo: 'Luz blanca de incidencia',
@@ -34,6 +31,51 @@ const tecnologia = [
     titulo: 'Carcasa robusta',
     texto:
       'Fabricado en Austria, IP54, resistente a caídas de hasta 1.5 metros y con lentes acromáticas, fieles al color y sin distorsión.',
+  },
+];
+
+const galeria = [
+  {
+    src: '/images/doculus/dispositivo-frontal.jpeg',
+    alt: 'Doculus Lumus, dispositivo portátil de verificación de documentos',
+    pie: 'Doculus Lumus® · dispositivo portátil de verificación de documentos',
+    fondo: 'claro',
+  },
+  {
+    src: '/images/doculus/dispositivo-pasaportes.jpeg',
+    alt: 'Doculus Lumus sobre pasaportes y visas',
+    pie: 'Un solo equipo para revisar pasaportes y visas',
+    fondo: 'claro',
+  },
+  {
+    src: '/images/doculus/set-examen-portatil.jpeg',
+    alt: 'Maleta de examen con Doculus Lumus y cámara Snap&Cam',
+    pie: 'Set de examen portátil con cámara Snap&Cam',
+    fondo: 'claro',
+  },
+  {
+    src: '/images/doculus/verificacion-pasaporte.jpeg',
+    alt: 'Verificación de un pasaporte con Doculus Lumus',
+    pie: 'Verificación de documentos en el punto de control',
+    fondo: 'claro',
+  },
+  {
+    src: '/images/doculus/capacitacion.jpeg',
+    alt: 'Capacitación de agentes en el uso de Doculus Lumus',
+    pie: 'Capacitación de agentes en el uso del equipo',
+    fondo: 'claro',
+  },
+  {
+    src: '/images/doculus/luz-uv-365.jpeg',
+    alt: 'Documento bajo luz UV de 365 nm',
+    pie: 'Luz UV 365 nm · colores de seguridad y fibras',
+    fondo: 'oscuro',
+  },
+  {
+    src: '/images/doculus/luz-obliqua.jpeg',
+    alt: 'Detalle de un documento con luz blanca de incidencia',
+    pie: 'Luz blanca · microtexto, relieve y manipulaciones',
+    fondo: 'oscuro',
   },
 ];
 
@@ -70,6 +112,7 @@ const modelos = [
       'Opcionales: IR 870 nm, UVB 313 nm, UVC 254 nm y láser Anti-Stokes (AS) 980 nm',
       'Energía: 2 pilas AAA + batería LI · Peso: 142 g',
     ],
+    rfid: true,
   },
   {
     titulo: 'Expert Edition 22x',
@@ -86,12 +129,18 @@ const modelos = [
       'Opcionales: IR 870 nm y batería de ion-litio USB-C',
       'Energía: 2 pilas AAA + batería LI · Peso: 142 g',
     ],
+    rfid: true,
   },
 ];
 
 const opciones = [
+  {
+    sigla: 'RFID',
+    texto:
+      'Lee el chip de los pasaportes electrónicos (tipos A/B e ISO 14443) y verifica la integridad de los datos en segundos.',
+    destacada: true,
+  },
   { sigla: 'FUV', texto: 'Linterna UV frontal de 365 nm para revisar tintas y fibras UV a distancia.' },
-  { sigla: 'RFID', texto: 'Verificación rápida ICAO para pasaportes electrónicos (tipos A/B e ISO 14443).' },
   { sigla: 'AS', texto: 'Láser infrarrojo 980 nm para detectar tintas y características Anti-Stokes.' },
   { sigla: 'IR', texto: 'LED infrarrojo de 870 nm para lectura de marcas invisibles.' },
   { sigla: 'UVB/C', texto: '2 LEDs UVB 313 nm y 2 LEDs UVC 254 nm para fluorescencia UV.' },
@@ -207,35 +256,6 @@ const aplicaciones = [
   },
 ];
 
-const descargas = [
-  {
-    titulo: 'Set de examen portátil',
-    subtitulo: 'Mobile Examination Set',
-    texto:
-      'El kit móvil de verificación de documentos para cualquier situación: dispositivo, cámara, Webapp y maleta de transporte.',
-    archivo: '/files/Flyer%20Mobile%20Examination%20Set.pdf',
-    peso: '963 KB',
-    hojas: '1 página',
-  },
-  {
-    titulo: 'Sets Snap&Go y Snap&Cam',
-    subtitulo: 'Snap&Go Set · Snap&Cam Set',
-    texto:
-      'Fotografía profesional de documentos con smartphone y visualización de todas las funciones de iluminación en su PC.',
-    archivo: '/files/Flyer%20Snap%26Go%2C%20Snap%26Cam%20ES_c.pdf',
-    peso: '434 KB',
-    hojas: '2 páginas',
-  },
-  {
-    titulo: 'Maletín de entrenamiento / operaciones',
-    subtitulo: 'Training/Operation Case',
-    texto:
-      'La configuración estándar del maletín: 14 dispositivos, 4 Doculamp 365, set Snap&Cam y 60 muestras de visado.',
-    archivo: '/files/Flyer%20Training%20Operation%20Case%20ES.pdf',
-    peso: '3.8 MB',
-    hojas: '2 páginas',
-  },
-];
 ---
 
 <Layout title="SCD | DOCULUS LUMUS" activePage="doculus">
@@ -283,7 +303,8 @@ const descargas = [
   <section class="banner-section dark-bg">
     <div class="container banner-content">
       <p>see and share the truth inside — vea la verdad en 30 segundos con doculus lumus</p>
-      <a href={SHOP} target="_blank" rel="noopener" class="btn">TIENDA EN LÍNEA</a>
+      <p class="banner-destacado">SCD es el único distribuidor autorizado de Doculus Lumus® en Guatemala</p>
+      <a href="/contacto" class="btn">CONTACTO</a>
     </div>
   </section>
 
@@ -360,6 +381,7 @@ const descargas = [
         {modelos.map((m) => (
           <div class="model-col">
             <h3>{m.titulo}</h3>
+            {m.rfid && <span class="rfid-badge">Verificación RFID del chip incluida</span>}
             <span class="model-profile">{m.perfil}</span>
             <p class="model-desc">{m.descripcion}</p>
             <ul>
@@ -380,7 +402,8 @@ const descargas = [
       <p class="options-lead">Configure su dispositivo según el nivel de análisis que necesita</p>
       <div class="options-grid">
         {opciones.map((o) => (
-          <div class="option-item">
+          <div class:list={['option-item', { destacada: o.destacada }]}>
+            {o.destacada && <span class="option-tag">Función clave</span>}
             <h3>{o.sigla}</h3>
             <p>{o.texto}</p>
           </div>
@@ -411,6 +434,33 @@ const descargas = [
     </div>
   </section>
 
+  <section class="galeria-section">
+    <div class="container">
+      <h2 class="section-title">GALERÍA</h2>
+      <p class="models-lead">El equipo en el punto de control, en el laboratorio y en la formación</p>
+      <div class="galeria-grid">
+        {galeria.map((f, i) => (
+          <figure class="galeria-item" data-modal="true" data-index={i}>
+            <div class:list={['galeria-foto', f.fondo]}>
+              <img src={f.src} alt={f.alt} loading="lazy" />
+            </div>
+            <figcaption>{f.pie}</figcaption>
+          </figure>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <div id="galeria-modal" class="modal-overlay">
+    <span class="modal-close">&times;</span>
+    <span class="modal-prev">&#10094;</span>
+    <span class="modal-next">&#10095;</span>
+    <div class="modal-content-wrap">
+      <img class="modal-content" id="galeria-modal-image" src="" alt="" />
+    </div>
+    <div class="modal-caption" id="galeria-modal-caption"></div>
+  </div>
+
   <section class="apps-section">
     <div class="container">
       <h2 class="section-title">APLICACIONES</h2>
@@ -432,38 +482,6 @@ const descargas = [
     </div>
   </section>
 
-  <section class="downloads-section">
-    <div class="container">
-      <h2 class="section-title">DESCARGAR FLYERS</h2>
-      <p class="models-lead">Documentación oficial en español para compartir con su equipo</p>
-      <div class="downloads-grid">
-        {descargas.map((d) => (
-          <div class="download-card">
-            <div class="download-img-wrap">
-              <svg viewBox="0 0 64 64" fill="none" width="64" height="64">
-                <path d="M14 6h24l12 12v40H14V6z" stroke="#24A3D8" stroke-width="2" stroke-linejoin="round" />
-                <path d="M38 6v12h12" stroke="#24A3D8" stroke-width="2" stroke-linejoin="round" />
-                <path d="M32 30v16M24 40l8 8 8-8" stroke="#EFBD1A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
-                <line x1="22" y1="52" x2="42" y2="52" stroke="#EFBD1A" stroke-width="2.5" stroke-linecap="round" />
-              </svg>
-            </div>
-            <div class="download-body">
-              <span class="download-label">{d.subtitulo}</span>
-              <h3>{d.titulo}</h3>
-              <p>{d.texto}</p>
-              <div class="download-meta">
-                <span>PDF</span>
-                <span>{d.hojas}</span>
-                <span>{d.peso}</span>
-              </div>
-              <a href={d.archivo} download class="btn">DESCARGAR PDF</a>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
   <section class="cta-section">
     <div class="container">
       <h2>¿Necesitas una solución a la medida?</h2>
@@ -472,11 +490,6 @@ const descargas = [
         gobierno, migración, aduanas, banca, industria y centros de formación.
       </p>
       <a href="/contacto" class="btn-contacto">CONTACTO</a>
-      <p class="cta-links">
-        <a href={BRAND} target="_blank" rel="noopener">www.doculuslumus.com</a> ·
-        <a href={SHOP} target="_blank" rel="noopener">Tienda en línea</a> ·
-        <a href="https://cam.doculuslumus.com" target="_blank" rel="noopener">Webapp</a>
-      </p>
     </div>
   </section>
 
@@ -572,6 +585,34 @@ const descargas = [
 
   .dark-bg .section-title {
     color: #fff;
+  }
+
+  .banner-destacado {
+    display: inline-block;
+    background: rgba(239, 189, 26, 0.12);
+    border: 1px solid #EFBD1A;
+    border-radius: 6px;
+    color: #EFBD1A;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 14px 24px;
+    max-width: 780px;
+    margin: 0 auto 30px !important;
+    line-height: 1.5 !important;
+  }
+
+  .rfid-badge {
+    display: inline-block;
+    align-self: flex-start;
+    background: #EFBD1A;
+    color: #323946;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    padding: 6px 12px;
+    border-radius: 4px;
+    margin-bottom: 12px;
   }
 
   .models-lead,
@@ -827,6 +868,25 @@ const descargas = [
     padding: 28px 24px;
   }
 
+  .option-item.destacada {
+    background: rgba(239, 189, 26, 0.14);
+    border: 2px solid #EFBD1A;
+    box-shadow: 0 8px 24px rgba(239, 189, 26, 0.18);
+  }
+
+  .option-tag {
+    display: inline-block;
+    background: #EFBD1A;
+    color: #323946;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin-bottom: 12px;
+  }
+
   .option-item h3 {
     color: #EFBD1A;
     font-size: 20px;
@@ -923,6 +983,150 @@ const descargas = [
     align-self: flex-start;
   }
 
+  /* ---------- Galería ---------- */
+  .galeria-section {
+    padding: 60px 0;
+    background: #fff;
+  }
+
+  .galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .galeria-item {
+    margin: 0;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+    cursor: zoom-in;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .galeria-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+  }
+
+  .galeria-foto {
+    aspect-ratio: 3 / 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .galeria-foto.claro {
+    background: #fff;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .galeria-foto.oscuro {
+    background: #0d0d0d;
+  }
+
+  .galeria-foto img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .galeria-item figcaption {
+    color: #666;
+    font-size: 13px;
+    line-height: 1.5;
+    padding: 14px 16px;
+    text-align: center;
+    margin-top: auto;
+  }
+
+  /* ---------- Modal ---------- */
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.9);
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .modal-overlay.active {
+    display: flex;
+  }
+
+  .modal-content-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 92vw;
+    max-height: 82vh;
+    padding: 0 40px;
+  }
+
+  .modal-content {
+    max-width: 100%;
+    max-height: 82vh;
+    object-fit: contain;
+    border-radius: 6px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+  }
+
+  .modal-close {
+    position: absolute;
+    top: 18px;
+    right: 30px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10000;
+    line-height: 1;
+    transition: color 0.2s;
+  }
+
+  .modal-close:hover {
+    color: #EFBD1A;
+  }
+
+  .modal-prev,
+  .modal-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 44px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10000;
+    padding: 16px;
+    user-select: none;
+    transition: color 0.2s;
+    line-height: 1;
+  }
+
+  .modal-prev { left: 12px; }
+
+  .modal-next { right: 12px; }
+
+  .modal-prev:hover,
+  .modal-next:hover {
+    color: #EFBD1A;
+  }
+
+  .modal-caption {
+    color: #ddd;
+    font-size: 14px;
+    padding: 14px 20px;
+    text-align: center;
+  }
+
   /* ---------- Aplicaciones ---------- */
   .apps-section {
     padding: 60px 0;
@@ -952,96 +1156,6 @@ const descargas = [
     margin-bottom: 10px;
   }
 
-  /* ---------- Descargas ---------- */
-  .downloads-section {
-    padding: 60px 0;
-  }
-
-  .downloads-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-  }
-
-  .download-card {
-    background: #fff;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
-    transition: transform 0.3s, box-shadow 0.3s;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .download-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
-  }
-
-  .download-img-wrap {
-    background: #f8f9fa;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 30px;
-    height: 180px;
-    border-bottom: 1px solid #f0f0f0;
-  }
-
-  .download-body {
-    padding: 28px 26px;
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-  }
-
-  .download-label {
-    display: block;
-    color: #24A3D8;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    margin-bottom: 8px;
-  }
-
-  .download-body h3 {
-    color: #323946;
-    font-size: 18px;
-    font-weight: 700;
-    margin-bottom: 10px;
-    line-height: 1.3;
-  }
-
-  .download-body > p {
-    font-size: 13px;
-    line-height: 1.7;
-    color: #666;
-    margin-bottom: 15px;
-  }
-
-  .download-meta {
-    display: flex;
-    gap: 8px;
-    margin-bottom: 22px;
-    flex-wrap: wrap;
-  }
-
-  .download-meta span {
-    background: #f1f3f5;
-    color: #777;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    padding: 4px 10px;
-    border-radius: 4px;
-  }
-
-  .download-body .btn {
-    align-self: flex-start;
-    margin-top: auto;
-  }
-
   /* ---------- CTA ---------- */
   .cta-section {
     background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('/images/home-slide-1.jpg');
@@ -1065,21 +1179,6 @@ const descargas = [
     margin-bottom: 25px;
   }
 
-  .cta-links {
-    font-size: 13px;
-    color: #ccc;
-    margin: 25px 0 0;
-  }
-
-  .cta-links a {
-    color: #fff;
-    text-decoration: underline;
-  }
-
-  .cta-links a:hover {
-    color: #EFBD1A;
-  }
-
   /* ---------- Responsive ---------- */
   @media (max-width: 992px) {
     .intro-grid {
@@ -1101,8 +1200,11 @@ const descargas = [
     .tech-grid-cards,
     .options-grid,
     .kits-grid,
-    .columns-3,
-    .downloads-grid {
+    .columns-3 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .galeria-grid {
       grid-template-columns: repeat(2, 1fr);
     }
   }
@@ -1124,9 +1226,16 @@ const descargas = [
     .tech-grid-cards,
     .options-grid,
     .kits-grid,
-    .columns-3,
-    .downloads-grid {
+    .columns-3 {
       grid-template-columns: 1fr;
+    }
+
+    .galeria-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .modal-content-wrap {
+      padding: 0 16px;
     }
 
     .intro-section,
@@ -1134,8 +1243,7 @@ const descargas = [
     .models-section,
     .options-section,
     .kits-section,
-    .apps-section,
-    .downloads-section {
+    .apps-section {
       padding: 40px 0;
     }
 
@@ -1175,9 +1283,70 @@ const descargas = [
     }
 
     .model-col .btn,
-    .kit-card .btn,
-    .download-body .btn {
+    .kit-card .btn {
       align-self: stretch;
     }
   }
 </style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const modal = document.getElementById("galeria-modal");
+    const modalImg = document.getElementById("galeria-modal-image");
+    const modalCaption = document.getElementById("galeria-modal-caption");
+    const modalClose = modal.querySelector(".modal-close");
+    const modalPrev = modal.querySelector(".modal-prev");
+    const modalNext = modal.querySelector(".modal-next");
+
+    const items = Array.from(
+      document.querySelectorAll('.galeria-item[data-modal="true"]')
+    );
+
+    let currentIndex = 0;
+
+    function openModal(index) {
+      if (!items.length) return;
+      currentIndex = index;
+      const img = items[currentIndex].querySelector("img");
+      const pie = items[currentIndex].querySelector("figcaption");
+      modalImg.src = img.src;
+      modalImg.alt = img.alt;
+      modalCaption.textContent = pie ? pie.textContent : "";
+      modal.classList.add("active");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeModal() {
+      modal.classList.remove("active");
+      document.body.style.overflow = "";
+    }
+
+    function navigate(direction) {
+      if (!items.length) return;
+      currentIndex =
+        (currentIndex + direction + items.length) % items.length;
+      openModal(currentIndex);
+    }
+
+    items.forEach((item) => {
+      item.addEventListener("click", () => {
+        openModal(parseInt(item.dataset.index, 10));
+      });
+    });
+
+    modalClose.addEventListener("click", closeModal);
+    modalPrev.addEventListener("click", () => navigate(-1));
+    modalNext.addEventListener("click", () => navigate(1));
+
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) closeModal();
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (!modal.classList.contains("active")) return;
+      if (e.key === "Escape") closeModal();
+      if (e.key === "ArrowLeft") navigate(-1);
+      if (e.key === "ArrowRight") navigate(1);
+    });
+  });
+</script>
