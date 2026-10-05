@@ -461,6 +461,56 @@ const aplicaciones = [
     <div class="modal-caption" id="galeria-modal-caption"></div>
   </div>
 
+  <section class="detalle-section">
+    <div class="container">
+      <h2 class="section-title">VERIFICACIÓN ÓPTICA Y VALIDACIÓN DEL CHIP</h2>
+      <p class="models-lead">Qué revisa el equipo y por qué es útil en el punto de control</p>
+      <div class="detalle-body">
+        <p class="detalle-lead">
+          Doculus Lumus® es un fabricante austriaco especializado en dispositivos portátiles para la
+          verificación de documentos de identidad y viaje. Sus equipos son utilizados por
+          organizaciones, especialistas forenses y organismos gubernamentales en distintos países,
+          particularmente en entornos de control fronterizo y verificación documental de primera línea.
+        </p>
+        <p>
+          En los puntos de control, el personal operativo dispone de un tiempo limitado para realizar
+          una revisión inicial del documento y determinar si existen indicios de alteración,
+          falsificación o irregularidades. En este contexto, Doculus Lumus® integra en un dispositivo
+          portátil diferentes fuentes de iluminación y elementos ópticos que permiten realizar
+          comprobaciones que normalmente requerirían equipos especializados de inspección documental.
+        </p>
+        <div class="detalle-chip">
+          <span class="detalle-chip-tag">Chip electrónico RFID · eMRTD / ePassport</span>
+          <p>
+            Un aspecto especialmente relevante es su capacidad para apoyar la validación del chip de
+            documentos electrónicos (eMRTD/ePassport), permitiendo complementar la inspección física
+            del documento con la comprobación de sus elementos electrónicos de seguridad. Esta
+            combinación de verificación óptica y validación del chip en un equipo portátil constituye
+            una ventaja especialmente útil para los procesos de control migratorio de primera línea.
+          </p>
+        </div>
+        <p>
+          Los dispositivos son fabricados en Austria, cuentan con protección IP54 y están diseñados
+          para resistir caídas de hasta 1,5 metros. Incorporan lentes acromáticas de alta fidelidad
+          cromática y baja distorsión, disponibles en configuraciones de 15× y 22× de aumento,
+          facilitando la inspección de características de seguridad tanto visibles como no evidentes
+          a simple vista.
+        </p>
+        <p>
+          La tecnología Doculus Lumus® cuenta además con desarrollos patentados en la Unión Europea y
+          Estados Unidos, orientados a la verificación óptica y al análisis de elementos de seguridad
+          documental.
+        </p>
+        <p>
+          En términos operativos, su principal ventaja es reunir en un dispositivo portátil
+          capacidades de inspección óptica y validación electrónica, permitiendo al personal de
+          primera línea realizar una revisión documental rápida, integral y estructurada, antes de
+          recurrir, cuando corresponda, a equipos o procedimientos de análisis especializado.
+        </p>
+      </div>
+    </div>
+  </section>
+
   <section class="apps-section">
     <div class="container">
       <h2 class="section-title">APLICACIONES</h2>
@@ -986,7 +1036,58 @@ const aplicaciones = [
   /* ---------- Galería ---------- */
   .galeria-section {
     padding: 60px 0;
+    background: #f8f9fa;
+  }
+
+  /* ---------- Detalle ---------- */
+  .detalle-section {
+    padding: 60px 0;
     background: #fff;
+  }
+
+  .detalle-body {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .detalle-body p {
+    font-size: 15px;
+    line-height: 1.9;
+    color: #555;
+    margin-bottom: 20px;
+  }
+
+  .detalle-lead {
+    font-size: 17px !important;
+    line-height: 1.8 !important;
+    color: #323946 !important;
+    font-weight: 600;
+  }
+
+  .detalle-chip {
+    background: #fffaf0;
+    border-left: 4px solid #EFBD1A;
+    border-radius: 0 10px 10px 0;
+    padding: 24px 28px;
+    margin: 28px 0;
+    box-shadow: 0 2px 12px rgba(239, 189, 26, 0.18);
+  }
+
+  .detalle-chip p {
+    margin-bottom: 0 !important;
+  }
+
+  .detalle-chip-tag {
+    display: inline-block;
+    background: #EFBD1A;
+    color: #323946;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: 4px;
+    margin-bottom: 14px;
   }
 
   .galeria-grid {
@@ -1243,6 +1344,8 @@ const aplicaciones = [
     .models-section,
     .options-section,
     .kits-section,
+    .galeria-section,
+    .detalle-section,
     .apps-section {
       padding: 40px 0;
     }
